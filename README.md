@@ -1,41 +1,19 @@
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/e80a5a4ccd17c2a209c9#?env%5BSmooch%20Public%20Env%5D=W3sia2V5IjoidXJsIiwidmFsdWUiOiJodHRwczovL2FwaS5zbW9vY2guaW8iLCJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXBwSWQiLCJ2YWx1ZSI6IiIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJ1c2VySWQiLCJ2YWx1ZSI6IiIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJKV1QiLCJ2YWx1ZSI6IiIsInR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZX1d)
+
 # Smooch Public Postman Collection
+This repo is a placeholder to the Smooch API Postman Collection.
 
----
-## Table of Contents
-This collection currently contains the following APIs (⭐ the repo! We're always adding more sections.)
-### Core
-- [App User](https://docs.smooch.io/rest/#app-user)
-- [Conversation](https://docs.smooch.io/rest/#schema)
-- [Message Types](https://docs.smooch.io/rest/#message-types)
----
-## Setup
+![Postman Dashboard](/images/postman-dashboard.png "Postman Environment Menu")
 
-### Get the Collection
-There are two ways you can use the Smooch Postman Collection
-1. Fork or clone this repo and import the `Smooch.postman_collection.json` file into your Postman Workspace.
-2. _get it from `url` --public postman collection published on the web_
+Please follow [this guide](https://docs.smooch.io/guide/postman-collection/) to set up your Postman environment
 
-### Setup Global Variables
-To use this collection, you will need to have a [Smooch account](https://smooch.io), and have at least one app setup. You will need the following values to run most of the API calls in the collection: `appId`, `userId`, `JWT`, and `messageId`.
-1. `appId`: The ID of the app with which you want to test the API.
-2. `userId`: The user to whom you want to send the test messages. (If you plan on sending to different users, you can set the `userId` value on a per call basis in the parameters instead). _see below_
-3. `JWT`: You will need a json web token to authenticate your calls.
 
-**Note:** _`messageId` is only needed for the `DELETE Message` API call_
-
-|    action     |  screenshot  |
-| ------------- | ------------ |
-| 1. Set environment to `Smooch`. | ![alt text](/images/environment.png "Postman Environment Menu") |
-| 2. Open Settings | ![alt text](/images/environment.1.png "Postman Environment Settings Button") |
-| 3. Add your values here | ![alt text](/images/global-variables.png "Postman Environment Variables") |
-
-### Get a JWT
-The easiest way to get one is to visit [https://jwt.io/](https://jwt.io/) and provide the following values:
-
-![alt text](/images/jwt-io-sample.png "Postman Environment Menu")
-
-> :warning: Don't forget to add the **SECRET** that is paired with this **KEY_ID**.
->
-> ![alt text](/images/smooch-account-settings.png "Smooch Account settings")
+## Environment Variables
+| key  | value | Comments |
+| :--- | ----- | -------- |
+| **url**    | https://api.smooch.io | |
+| **appId**  | _id of the app used to send/receive data_ | It can be found in the settings tab your app. |
+| **userId** | _the user used to send/receive messages_ | This can also be set in the API call params. |
+| **JWT**    | _JWT Token_ | See this [guide](https://docs.smooch.io/guide/jwt/#json-web-tokens-jwts) for more information. |
 
 There are many other ways of getting a `JWT` depending on your environment. We provide a few examples in our [guide docs](https://docs.smooch.io/guide/jwt/#json-web-tokens-jwts).
