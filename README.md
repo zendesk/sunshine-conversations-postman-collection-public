@@ -13,7 +13,7 @@ Please follow [this guide](https://docs.smooch.io/guide/postman-collection/) to 
 | :--- | ----- | -------- |
 | **url**    | https://api.smooch.io | |
 | **appId**  | _id of the app used to send/receive data_ | It can be found in the settings tab your app. |
-| **userId** | _the user used to send/receive messages_ | This can also be set in the API call params. |
+| **appUserId** | _the user used to send/receive messages_ | This can also be set in the API call params. |
 | **JWT**    | _JWT Token_ | See this [guide](https://docs.smooch.io/guide/jwt/#json-web-tokens-jwts) for more information. |
 
 There are many other ways of getting a `JWT` depending on your environment. We provide a few examples in our [guide docs](https://docs.smooch.io/guide/jwt/#json-web-tokens-jwts).
