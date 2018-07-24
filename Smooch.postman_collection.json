@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "368e4834-095b-4eac-87b1-d2c625c5f9b6",
-		"name": "Smooch Public",
+		"_postman_id": "7636b109-d611-4eb5-9b6a-a93ab58227d7",
+		"name": "Smooch",
 		"description": "Smooch Public API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -18,6 +18,10 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -25,33 +29,23 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"{{appUserId}}"
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
 					},
 					"response": [
 						{
-							"id": "00946aef-4864-4d4c-aabd-a0dd4a75dc29",
+							"id": "e320b5e9-8819-4d0c-b778-7330e632ba75",
 							"name": "Get App User Example",
 							"originalRequest": {
 								"method": "GET",
@@ -197,6 +191,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -204,33 +202,23 @@
 							"raw": "{\n    \"surname\" : \"Wayne\",\n    \"givenName\": \"Bruce\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"{{appUserId}}"
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#update-app-user](https://docs.smooch.io/rest/#update-app-user)"
 					},
 					"response": [
 						{
-							"id": "73c77a50-65af-4fcb-ae1d-8f75606ababc",
+							"id": "b657cf85-fb7f-418d-b23a-a77be4d48ba5",
 							"name": "Update App User Example",
 							"originalRequest": {
 								"method": "PUT",
@@ -378,40 +366,39 @@
 					"name": "Delete App User Profile",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/profile",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/profile",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"profile"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#delete-app-user-profile](https://docs.smooch.io/rest/#delete-app-user-profile)\n\n_Calling this API doesn’t delete the app user’s conversation history. To fully delete the app user, see Delete App User._"
 					},
 					"response": [
 						{
-							"id": "cb646c9d-ee72-4137-8772-1e79e67d5bbe",
+							"id": "5a16466b-2dda-4a15-8102-934fc60e567b",
 							"name": "Delete App User Profile Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -549,39 +536,158 @@
 					"name": "Delete App User",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"{{appUserId}}"
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#delete-app-user](https://docs.smooch.io/rest/#delete-app-user)\n\n_To only delete an app user’s profile, see Delete App User Profile._"
 					},
 					"response": [
 						{
-							"id": "0e42e6d0-60ef-46d8-ab67-b4c616391fd5",
+							"id": "a8eb8a6e-23d0-4771-bee8-688e148e2b13",
+							"name": "Delete App User Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										":appId",
+										"appusers",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "{{appId}}"
+										},
+										{
+											"key": "userId",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Jun 2018 15:16:23 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Expires",
+									"value": "-1",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.13.8",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"id": "3aa36f54-cf6c-4aad-b82a-a1a81983d645",
 							"name": "Delete App User Profile Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -712,126 +818,6 @@
 							],
 							"cookie": [],
 							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						},
-						{
-							"id": "512919e1-58f3-4ad4-9918-bee408bb76b6",
-							"name": "Delete App User Example",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Length",
-									"value": "2",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:16:23 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
 						}
 					]
 				},
@@ -843,6 +829,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -850,28 +840,22 @@
 							"raw": "{\n\t\"userId\": \"supes@smooch.io\",\n\t\"surname\": \"Clark\",\n\t\"givenName\": \"Kent\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#pre-create-app-user](https://docs.smooch.io/rest/#pre-create-app-user)"
 					},
 					"response": [
 						{
-							"id": "6f456e9c-1c70-4ebb-918a-e7bb5abbec39",
+							"id": "297ceebb-03cd-48bf-b434-65ed204a05a6",
 							"name": "Pre-Create App User Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1002,40 +986,39 @@
 					"name": "Get App User Channels",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/channels",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/channels",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"channels"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user-channel-entities](https://docs.smooch.io/rest/#get-app-user-channel-entities)"
 					},
 					"response": [
 						{
-							"id": "ea5d48f8-4427-4c28-8e4e-a2eceafd1528",
+							"id": "dbe280ad-e6aa-44ad-a6ba-ec50adb75c32",
 							"name": "Get App User Channels Example",
 							"originalRequest": {
 								"method": "GET",
@@ -1161,40 +1144,39 @@
 					"name": "Get App User Business System IDs",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/businesssystems",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/businesssystems",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"businesssystems"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/business-systems/#business-systems](https://docs.smooch.io/guide/business-systems/#business-systems)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user-business-system-ids](https://docs.smooch.io/rest/#get-app-user-business-system-ids)"
 					},
 					"response": [
 						{
-							"id": "2078d37b-5a6e-4309-911a-0860dba1b398",
+							"id": "3fa01201-3333-4614-bc0c-b14def521a63",
 							"name": "Get App User Business System IDs Example",
 							"originalRequest": {
 								"method": "GET",
@@ -1324,6 +1306,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -1331,34 +1317,24 @@
 							"raw": "{\n\t\"type\": \"twilio\",\n\t\"confirmation\": {\n\t\t\"type\": \"prompt\",\n\t\t\"phoneNumber\": \"+15145555555\"\n\t}\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/channels",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/channels",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"channels"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/linking-users/#link-the-user](https://docs.smooch.io/guide/linking-users/#link-the-user)\n- API Docs: [https://docs.smooch.io/rest/#link-app-user-to-channel](https://docs.smooch.io/rest/#link-app-user-to-channel)"
 					},
 					"response": [
 						{
-							"id": "bddc7d83-4850-45e7-9108-964e06957085",
+							"id": "de90b7ef-b796-43cc-9334-9e25ea8d7942",
 							"name": "Link App User to Channel Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1475,6 +1451,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -1482,28 +1462,20 @@
 							"raw": "{}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/channels/:channel",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/channels/:channel",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"channels",
 								":channel"
 							],
 							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								},
 								{
 									"key": "channel",
 									"value": "twilio"
@@ -1514,7 +1486,7 @@
 					},
 					"response": [
 						{
-							"id": "17bb98dc-095d-47d0-919e-bf730c0bdf0a",
+							"id": "339589e2-1cab-411c-9f22-128383551a0b",
 							"name": "Unlink App User from Channel Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -1626,40 +1598,39 @@
 					"name": "Get Auth Code",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/authCode",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/authCode",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"authCode"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/authorization/#authorization](https://docs.smooch.io/guide/authorization/#authorization)\n- API Docs: [https://docs.smooch.io/rest/#get-auth-code](https://docs.smooch.io/rest/#get-auth-code)"
 					},
 					"response": [
 						{
-							"id": "99a909f4-6139-4b02-b87a-a68dac71aabf",
+							"id": "7c1f2be8-3413-4b05-8279-09f91a59788f",
 							"name": "Get Auth Code Example",
 							"originalRequest": {
 								"method": "GET",
@@ -1785,39 +1756,38 @@
 					"name": "Get Link Requests",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/linkrequest?integrationIds=59dbd737f294ea1fa2734829,59fa19888b1dd03638d2dd54,5a00d5b3002ef2a871aaef98",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/linkrequest?integrationIds=:integrationIds",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"linkrequest"
 							],
 							"query": [
 								{
 									"key": "integrationIds",
-									"value": "59dbd737f294ea1fa2734829,59fa19888b1dd03638d2dd54,5a00d5b3002ef2a871aaef98",
+									"value": ":integrationIds",
 									"description": "Comma separated list of integration ids"
-								}
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
 								}
 							]
 						},
@@ -1825,7 +1795,7 @@
 					},
 					"response": [
 						{
-							"id": "477eea73-c3e7-49b3-bb90-1aea8ff7a6c8",
+							"id": "d0b4bccb-dc1f-43c5-b00b-b0879010c53f",
 							"name": "Get Link Requests Example",
 							"originalRequest": {
 								"method": "GET",
@@ -1929,185 +1899,6 @@
 							"body": "{\n    \"linkRequests\": [{\n        \"integrationId\": \"59dbd737f294ea1fa2734829\",\n        \"type\": \"messenger\",\n        \"code\": \"lr_K4DBnWEiWv6LR-CP0j_5FFcl\",\n        \"url\": \"https://m.me/123456781234567?ref=lr_K4DBnWEiWv6LR-CP0j_5FFcl\"\n    },\n    {\n        \"integrationId\": \"59fa19888b1dd03638d2dd54\",\n        \"type\": \"telegram\",\n        \"code\": \"lr_Xidl9tTWt6YVXP8SFD3hdUiD\",\n        \"url\": \"https://telegram.me/your_telegram_bot?start=lr_Xidl9tTWt6YVXP8SFD3hdUiD\"\n    },\n    {\n        \"integrationId\": \"5a00d5b3002ef2a871aaef98\",\n        \"type\": \"viber\",\n        \"code\": \"lr_6p3awZLOQWk-6AmOYocLeFq5\",\n        \"url\": \"viber://pa?chatURI=YourViberAccount&context=lr_6p3awZLOQWk-6AmOYocLeFq5\"\n    }]\n}"
 						}
 					]
-				},
-				{
-					"name": "Get App User Copy",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"appusers",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
-					},
-					"response": [
-						{
-							"id": "21046d2e-410d-4e81-b93b-08f3602fb10d",
-							"name": "Get App User Example",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:01:21 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d8-gedUBLZcXOnGWEoJ1s0W2v9MCLo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						}
-					]
 				}
 			]
 		},
@@ -2123,6 +1914,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -2130,34 +1925,24 @@
 							"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"Hello there\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#post-message](https://docs.smooch.io/rest/#post-message)"
 					},
 					"response": [
 						{
-							"id": "ee4c5df3-6508-483e-87e3-7d6060a30e5e",
+							"id": "502f9eb8-f501-42cb-bfe6-fdb79e26c23b",
 							"name": "Message Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2304,6 +2089,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -2311,34 +2100,24 @@
 							"raw": "{\n    \"text\": \"Which do you prefer?\",\n    \"role\": \"appMaker\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#message](https://docs.smooch.io/guide/key-concepts/#message)\n- API Docs: [https://docs.smooch.io/rest/#get-message](https://docs.smooch.io/rest/#get-message)"
 					},
 					"response": [
 						{
-							"id": "51f5e238-a2d5-4991-ac3a-e4d38f6b578c",
+							"id": "c0a58fde-afbf-450d-b0b4-e35aeecbcd4a",
 							"name": "Get Messages Example",
 							"originalRequest": {
 								"method": "GET",
@@ -2479,7 +2258,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box ????????????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"😍\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"🙂\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"😠\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -2491,6 +2270,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -2498,31 +2281,23 @@
 							"raw": "{\n    \"text\": \"Which do you prefer?\",\n    \"role\": \"appMaker\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages/:messageId",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages/:messageId",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages",
 								":messageId"
 							],
 							"variable": [
 								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								},
-								{
 									"key": "messageId",
-									"value": "5b2bc730e64e65002244ad84"
+									"value": ""
 								}
 							]
 						},
@@ -2530,7 +2305,7 @@
 					},
 					"response": [
 						{
-							"id": "356e6500-bf4c-493b-bb34-03a2d2861820",
+							"id": "76ae900f-b9dd-41b7-a468-4635ea3720eb",
 							"name": "Delete Single Message Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -2661,7 +2436,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "9919c112-839c-490a-96cb-bf1d3ab36799",
+							"id": "3f277497-8cd9-46a8-8f05-10079a7c19f1",
 							"name": "Get Messages Example",
 							"originalRequest": {
 								"method": "GET",
@@ -2802,7 +2577,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box ????????????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"😍\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"🙂\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"😠\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -2814,6 +2589,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -2821,34 +2600,24 @@
 							"raw": "{\n    \"text\": \"Which do you prefer?\",\n    \"role\": \"appMaker\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#delete-all-messages](https://docs.smooch.io/rest/#delete-all-messages)"
 					},
 					"response": [
 						{
-							"id": "669a51ab-25c3-4840-8db6-ef64bb83da9f",
+							"id": "56019309-f390-498f-83be-92a139f4b95c",
 							"name": "Get Messages Example",
 							"originalRequest": {
 								"method": "GET",
@@ -2989,10 +2758,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box ????????????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"????\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"????\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"😍\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"🙂\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"😠\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
 						},
 						{
-							"id": "a994f44b-41b6-4489-a771-15174a8fa58b",
+							"id": "50ee2c9f-0a56-4867-8aac-f8627008a059",
 							"name": "Delete All Messages Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3118,7 +2887,7 @@
 							"body": "{}"
 						},
 						{
-							"id": "3d480b59-ca46-49af-ae24-125077f70758",
+							"id": "468b3ece-4259-4d8e-9b7f-022077aef381",
 							"name": "Delete Single Message Example",
 							"originalRequest": {
 								"method": "DELETE",
@@ -3258,6 +3027,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -3265,35 +3038,25 @@
 							"raw": "{\n\t\"type\" : \"typing:start\",\n\t\"role\": \"appMaker\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/conversation/activity",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/conversation/activity",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"conversation",
 								"activity"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/sending-messages/#sending-typing-activity-with-the-api](https://docs.smooch.io/guide/sending-messages/#sending-typing-activity-with-the-api)\n- API Docs: [https://docs.smooch.io/rest/#conversation-activity](https://docs.smooch.io/rest/#conversation-activity)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "39637624-a59c-4d9d-ba44-ad6a61323527",
+							"id": "3d0972e3-db23-4248-9c2f-aa28fd4794b5",
 							"name": "Conversation Activity Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3435,6 +3198,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -3442,35 +3209,25 @@
 							"raw": "{\n\t\"type\" : \"conversation:read\",\n\t\"role\": \"appMaker\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/conversation/activity",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/conversation/activity",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"conversation",
 								"activity"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#conversation-activity](https://docs.smooch.io/rest/#conversation-activity)"
 					},
 					"response": [
 						{
-							"id": "b74104ff-5589-4ad9-8129-8234472ce0ac",
+							"id": "1f4b8dcb-5508-4e09-bc59-2bfd71f1ae8e",
 							"name": "Business Read Receipt Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3608,34 +3365,33 @@
 					"name": "Reset Unread Count",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/conversation/read",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/conversation/read",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"conversation",
 								"read"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#reset-unread-count](https://docs.smooch.io/rest/#reset-unread-count)"
@@ -3682,6 +3438,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -3689,34 +3449,24 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Hello!\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"More info\",\n\t        \"type\": \"link\",\n\t        \"uri\": \"http://example.org\"\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "53683705-c2c9-4d04-b9cf-332908e50c96",
+									"id": "73139515-3ccb-4e3a-864d-eb50a17b47d3",
 									"name": "Action - Link Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3863,6 +3613,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -3870,34 +3624,24 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Hello!\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"Check out the site\",\n\t        \"type\": \"webview\",\n\t        \"size\": \"full\",\n\t        \"uri\": \"http://smooch.io\",\n\t        \"fallback\": \"http://example.org\"\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/conversation-extensions/](https://docs.smooch.io/guide/conversation-extensions/)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "c43cc883-a2d2-4317-b4d0-fe19b0131123",
+									"id": "c764b9c0-8df7-4970-be40-40a9b0ab1243",
 									"name": "Action - webview",
 									"originalRequest": {
 										"method": "POST",
@@ -4044,6 +3788,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -4051,34 +3799,24 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Great! Ready to checkout?\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"Purchase\",\n\t        \"type\": \"buy\",\n\t        \"amount\": 1000\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "_For the \"buy\" action to function, the Stripe integration needs to be configured on the app._\n### For more information\n- Guide: [https://docs.smooch.io/guide/stripe-payments/#stripe-payments](https://docs.smooch.io/guide/stripe-payments/#stripe-payments)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "4ee9bd40-c1bc-4479-915d-2409bc581a58",
+									"id": "20cad512-c280-4dde-91d8-2611edbb64f3",
 									"name": "Action - buy Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4225,6 +3963,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -4232,34 +3974,24 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Your reservation for 7 guests at Lazy Bear on June 6th 7:00 PM is confirmed.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"Add to iCalendar\",\n\t        \"type\": \"postback\",\n\t        \"payload\": \"icalendar\"\n    \t},\n    \t{\n\t        \"text\": \"Add to Google Calendar\",\n\t        \"type\": \"postback\",\n\t        \"payload\": \"google calendar\"\n\n    \t},\n    \t{\n\t        \"text\": \"Add to Outlook\",\n\t        \"type\": \"postback\",\n\t        \"payload\": \"outlook\"\n\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/?shell#postback-events](https://docs.smooch.io/rest/?shell#postback-events)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "ab17f98e-93c8-4ed3-ac6d-4574f160a45a",
+									"id": "5155ef3c-90f9-43b5-8415-498561c57357",
 									"name": "Action: postback Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4406,41 +4138,35 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
+									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"😍\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"🙂\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"😠\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "4704e73b-a976-48e1-ba31-09e8d98040e8",
+									"id": "ac358940-c55f-4609-99a6-b43c9802d743",
 									"name": "Action: quick reply Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4452,7 +4178,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"😍\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"🙂\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"😠\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
 										},
 										"url": {
 											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
@@ -4575,7 +4301,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"????\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
+									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"😍\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"🙂\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"😠\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
 								}
 							]
 						},
@@ -4587,6 +4313,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -4594,34 +4324,24 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Let us know where you are.\",\n    \"actions\": [\n    \t{\n\t        \"type\": \"locationRequest\",\n\t        \"text\": \"Send Location\"\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "f28fe39f-8eb9-4b6b-b28d-eb8f1ab6d6e8",
+									"id": "36edd94d-b979-4b81-91af-ffd1180c32b1",
 									"name": "Action:  location request Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4759,7 +4479,7 @@
 									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send Location\",\"_id\":\"5b2cf7422bb60400222bf299\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529673538.639,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf7422bb60400222bf298\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529673538.639,\"appUserLastRead\":1529672980.196}}"
 								},
 								{
-									"id": "8e693ed9-ace7-46f0-a135-f622d4d81057",
+									"id": "1e284472-798b-47f8-b732-438ca5454d5e",
 									"name": "Action: quick reply Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4771,7 +4491,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"😍\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"🙂\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"😠\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
 										},
 										"url": {
 											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
@@ -4894,7 +4614,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"????\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
+									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"😍\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"🙂\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"😠\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
 								}
 							]
 						},
@@ -4906,6 +4626,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
 									}
 								],
 								"body": {
@@ -4913,34 +4637,300 @@
 									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"carousel\",\n    \"items\": [\n    \t{\n\t        \"title\": \"Scandinave Getaway\",\n\t        \"description\": \"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\",\n\t        \"mediaUrl\": \"https://www.scandinave.com/app/uploads/sites/5/2017/01/2015-upper-hot-bath-hp-820x779.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"share\"\n\t        \t}\n\t        ]\n    \t}\n    ]\n}"
 								},
 								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"v1",
 										"apps",
-										":appId",
+										"{{appId}}",
 										"appusers",
-										":userId",
+										"{{appUserId}}",
 										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
 									]
 								},
 								"description": "_Share Buttons are currently only supported in Facebook Messenger carousels._\n### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#message-actions](https://docs.smooch.io/rest/#message-actions)\n- Carousels: [https://docs.smooch.io/rest/?shell#carousel](https://docs.smooch.io/rest/?shell#carousel)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 							},
 							"response": [
 								{
-									"id": "4066a7df-9f1a-4ce7-ac38-22bf27950973",
+									"id": "99581d2e-f1d1-4ff0-b550-dae29296d7b0",
+									"name": "Action: quick reply Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"😍\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"🙂\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"😠\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												":appId",
+												"appusers",
+												":userId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "appId",
+													"value": "{{appId}}"
+												},
+												{
+													"key": "userId",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "Cache-Control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Length",
+											"value": "872",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 21 Jun 2018 19:22:07 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"368-AgMu7cLbMdf50KdGniH+mHqgBHQ\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Expires",
+											"value": "-1",
+											"name": "Expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "Poll-Interval",
+											"value": "30",
+											"name": "Poll-Interval",
+											"description": "Custom header"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache",
+											"name": "Pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "Server",
+											"value": "nginx/1.13.8",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000",
+											"name": "Strict-Transport-Security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "Vary",
+											"value": "X-HTTP-Method-Override",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff",
+											"name": "X-Content-Type-Options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN",
+											"name": "X-Frame-Options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block",
+											"name": "X-XSS-Protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"😍\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"🙂\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"😠\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
+								},
+								{
+									"id": "d856aba1-1887-48c2-b02e-3dbc0c728314",
+									"name": "Action:  location request Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Let us know where you are.\",\n    \"actions\": [\n    \t{\n\t        \"type\": \"locationRequest\",\n\t        \"text\": \"Send Location\"\n    \t}\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												":appId",
+												"appusers",
+												":userId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "appId",
+													"value": "{{appId}}"
+												},
+												{
+													"key": "userId",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "Cache-Control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Length",
+											"value": "534",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 22 Jun 2018 13:18:58 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"216-UJihrc4ys3/jr9sk2dkvWG5Y7Tk\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Expires",
+											"value": "-1",
+											"name": "Expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "Poll-Interval",
+											"value": "30",
+											"name": "Poll-Interval",
+											"description": "Custom header"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache",
+											"name": "Pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "Server",
+											"value": "nginx/1.13.8",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000",
+											"name": "Strict-Transport-Security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "Vary",
+											"value": "X-HTTP-Method-Override",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff",
+											"name": "X-Content-Type-Options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN",
+											"name": "X-Frame-Options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block",
+											"name": "X-XSS-Protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send Location\",\"_id\":\"5b2cf7422bb60400222bf299\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529673538.639,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf7422bb60400222bf298\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529673538.639,\"appUserLastRead\":1529672980.196}}"
+								},
+								{
+									"id": "5d46f895-6981-4331-bb1e-83b098b9ae20",
 									"name": "Action:  share Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5076,282 +5066,6 @@
 									],
 									"cookie": [],
 									"body": "{\"message\":{\"text\":\"1. Scandinave Getaway\\nEnjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\\n\",\"items\":[{\"title\":\"Scandinave Getaway\",\"description\":\"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\",\"mediaUrl\":\"https://www.scandinave.com/app/uploads/sites/5/2017/01/2015-upper-hot-bath-hp-820x779.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cf9653e3adc00228ba421\",\"actions\":[{\"_id\":\"5b2cf9653e3adc00228ba422\",\"uri\":\"\",\"type\":\"share\"}]}],\"type\":\"carousel\",\"role\":\"appMaker\",\"received\":1529674085.179,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf9653e3adc00228ba420\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":2,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529674085.179,\"appUserLastRead\":1529672980.196}}"
-								},
-								{
-									"id": "9951583a-3b84-462a-bf81-5a701d4900af",
-									"name": "Action:  location request Example",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Let us know where you are.\",\n    \"actions\": [\n    \t{\n\t        \"type\": \"locationRequest\",\n\t        \"text\": \"Send Location\"\n    \t}\n    ]\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												":appId",
-												"appusers",
-												":userId",
-												"messages"
-											],
-											"variable": [
-												{
-													"key": "appId",
-													"value": "{{appId}}"
-												},
-												{
-													"key": "userId",
-													"value": "{{userId}}"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Cache-Control",
-											"value": "private, no-cache, no-store, must-revalidate",
-											"name": "Cache-Control",
-											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive",
-											"name": "Connection",
-											"description": "Options that are desired for the connection"
-										},
-										{
-											"key": "Content-Length",
-											"value": "534",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 22 Jun 2018 13:18:58 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"216-UJihrc4ys3/jr9sk2dkvWG5Y7Tk\"",
-											"name": "ETag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "Expires",
-											"value": "-1",
-											"name": "Expires",
-											"description": "Gives the date/time after which the response is considered stale"
-										},
-										{
-											"key": "Poll-Interval",
-											"value": "30",
-											"name": "Poll-Interval",
-											"description": "Custom header"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache",
-											"name": "Pragma",
-											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-										},
-										{
-											"key": "Server",
-											"value": "nginx/1.13.8",
-											"name": "Server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000",
-											"name": "Strict-Transport-Security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "Vary",
-											"value": "X-HTTP-Method-Override",
-											"name": "Vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff",
-											"name": "X-Content-Type-Options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN",
-											"name": "X-Frame-Options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block",
-											"name": "X-XSS-Protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send Location\",\"_id\":\"5b2cf7422bb60400222bf299\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529673538.639,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf7422bb60400222bf298\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529673538.639,\"appUserLastRead\":1529672980.196}}"
-								},
-								{
-									"id": "fd714a7b-1dc8-45e5-bb93-d2e4adb99e32",
-									"name": "Action: quick reply Example",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Help John understand how he’s doing. Please rate your conversation.\",\n    \"actions\": [\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"great\"\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"good\"\n\n    \t},\n    \t{\n\t        \"text\": \"☹️\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"not so good\"\n\n    \t},\n    \t{\n\t        \"text\": \"????\",\n\t        \"type\": \"reply\",\n\t        \"payload\": \"really not good at all\"\n\n    \t}\n    ]\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												":appId",
-												"appusers",
-												":userId",
-												"messages"
-											],
-											"variable": [
-												{
-													"key": "appId",
-													"value": "{{appId}}"
-												},
-												{
-													"key": "userId",
-													"value": "{{userId}}"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Cache-Control",
-											"value": "private, no-cache, no-store, must-revalidate",
-											"name": "Cache-Control",
-											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive",
-											"name": "Connection",
-											"description": "Options that are desired for the connection"
-										},
-										{
-											"key": "Content-Length",
-											"value": "872",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 21 Jun 2018 19:22:07 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"368-AgMu7cLbMdf50KdGniH+mHqgBHQ\"",
-											"name": "ETag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "Expires",
-											"value": "-1",
-											"name": "Expires",
-											"description": "Gives the date/time after which the response is considered stale"
-										},
-										{
-											"key": "Poll-Interval",
-											"value": "30",
-											"name": "Poll-Interval",
-											"description": "Custom header"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache",
-											"name": "Pragma",
-											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-										},
-										{
-											"key": "Server",
-											"value": "nginx/1.13.8",
-											"name": "Server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000",
-											"name": "Strict-Transport-Security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "Vary",
-											"value": "X-HTTP-Method-Override",
-											"name": "Vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff",
-											"name": "X-Content-Type-Options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN",
-											"name": "X-Frame-Options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block",
-											"name": "X-XSS-Protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"????\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"????\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
 								}
 							]
 						}
@@ -5400,6 +5114,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -5407,34 +5125,24 @@
 							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Hey John! I'd be happy to help.\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#text](https://docs.smooch.io/rest/#text)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "079ee0f7-13fa-47cc-a970-6d2b696417b2",
+							"id": "4f314bf9-888e-4011-8652-d7a95bd8c4d8",
 							"name": "Example",
 							"originalRequest": {
 								"method": "POST",
@@ -5593,41 +5301,35 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"text\",\n    \"text\": \"I am totally in love with this month’s subscription box ????????????\"\n}"
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#text](https://docs.smooch.io/rest/#text)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "f0eb8755-a3ae-4cec-8226-1081a751dd7e",
+							"id": "aeb74340-ccc1-4a6c-9eb1-c406e102ca9e",
 							"name": "Example",
 							"originalRequest": {
 								"method": "POST",
@@ -5639,7 +5341,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"text\",\n    \"text\": \"I am totally in love with this month’s subscription box ????????????\"\n}"
+									"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"text\",\n    \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
@@ -5762,7 +5464,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\"message\":{\"text\":\"I am totally in love with this month’s subscription box ????????????\",\"type\":\"text\",\"role\":\"appUser\",\"received\":1529603624.354,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"_id\":\"5b2be628f453be00221dbff2\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529603624.354}}"
+							"body": "{\"message\":{\"text\":\"I am totally in love with this month’s subscription box 😍😍😍\",\"type\":\"text\",\"role\":\"appUser\",\"received\":1529603624.354,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"_id\":\"5b2be628f453be00221dbff2\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529603624.354}}"
 						}
 					]
 				},
@@ -5790,41 +5492,35 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"image\",\n    \"text\": \"Glad I could help!\",\n    \"mediaUrl\": \"https://media.giphy.com/media/3ohs4soeQN2IAIqV6U/giphy.gif\",\n    \"mediaType\": \"image/gif\"\n}"
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"image\",\n    \"text\": \"Glad I could help!\",\n    \"mediaUrl\": \"https://upload.wikimedia.org/wikipedia/commons/d/d3/Newtons_cradle_animation_book_2.gif\",\n    \"mediaType\": \"image/gif\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "Send an animated gif, with or without text.\n### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#image](https://docs.smooch.io/rest/#image)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "5eab1055-9756-4590-b5f8-85fb21e624a0",
+							"id": "f636d88c-2f24-43ed-a2e2-140dddedeaf9",
 							"name": "Animated GIF Example",
 							"originalRequest": {
 								"method": "POST",
@@ -5971,41 +5667,35 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"image\",\n    \"text\": \"Do you have this jacket in stock at the moment?\",\n    \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n    \"mediaType\": \"image/jpeg\"\n}"
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"image\",\n    \"text\": \"This is the jacket that we currently have in stock.\",\n    \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n    \"mediaType\": \"image/jpeg\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "Send an image, with or without text.\n### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#image](https://docs.smooch.io/rest/#image)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "5a84e386-e9f5-4154-a164-977e0b87f85b",
+							"id": "3bf1d4b1-5318-401e-a06a-12174a2860be",
 							"name": "Image Example",
 							"originalRequest": {
 								"method": "POST",
@@ -6143,7 +5833,7 @@
 							"body": "{\"message\":{\"text\":\" \",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\"type\":\"image\",\"role\":\"appUser\",\"received\":1529603927.961,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"mediaSize\":190607,\"_id\":\"5b2be7588b1e5d002128a1ab\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529603927.961}}"
 						},
 						{
-							"id": "2518de2a-c653-4819-a22b-50e92471d1ef",
+							"id": "9efe3eab-663b-45cf-9f1e-84a0d86debe7",
 							"name": "Image with text",
 							"originalRequest": {
 								"method": "POST",
@@ -6290,41 +5980,35 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"file\",\n    \"mediaUrl\": \"http://example.org/document.pdf\",\n    \"mediaType\": \"application/pdf\"\n}"
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"file\",\n    \"mediaUrl\": \"https://www.arista.com/assets/data/pdf/Warranty.pdf\",\n    \"mediaType\": \"application/pdf\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:appUser/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":appUser",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "appUser",
-									"value": "{{appUser}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#file](https://docs.smooch.io/rest/#file)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "a56b090f-826f-48eb-8648-86df81118b9d",
+							"id": "3f242b88-91f1-4441-9c6e-f444e6729dab",
 							"name": "File Example",
 							"originalRequest": {
 								"method": "POST",
@@ -6464,189 +6148,6 @@
 					]
 				},
 				{
-					"name": "Location Message",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"appusers",
-								":userId",
-								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#location](https://docs.smooch.io/rest/#location)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
-					},
-					"response": [
-						{
-							"id": "14ee1af9-d157-4a4b-a5c6-348de030e136",
-							"name": "Location Example",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"name": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n}"
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId",
-										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Length",
-									"value": "456",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 21 Jun 2018 18:20:43 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1c8-zbX4c/Oi8uPpf5V9ILSCIjQ729Q\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Poll-Interval",
-									"value": "30",
-									"name": "Poll-Interval",
-									"description": "Custom header"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Vary",
-									"value": "X-HTTP-Method-Override",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"message\":{\"text\":\"Location shared:\\nhttps://maps.google.com/maps?q=45.5261583,-73.595346\",\"type\":\"location\",\"role\":\"appUser\",\"coordinates\":{\"lat\":45.5261583,\"long\":-73.595346},\"received\":1529605242.976,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"_id\":\"5b2bec7aaff927002140dca0\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529604810.883,\"appUserLastRead\":1529605242.976}}"
-						}
-					]
-				},
-				{
 					"name": "Carousel Message",
 					"event": [
 						{
@@ -6666,6 +6167,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -6673,34 +6178,24 @@
 							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"carousel\",\n    \"items\": [\n    \t{\n\t    \t\"title\": \"Scandinave Getaway\",\n\t\t    \"description\": \"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\",\n\t        \"mediaUrl\": \"https://www.scandinave.com/app/uploads/sites/5/2017/01/2015-upper-hot-bath-hp-820x779.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"postback\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"payload\": \"CHECK_AVAILABILITY\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Brewery Tour\",\n\t\t    \"description\": \"Explore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\",\n\t        \"mediaUrl\": \"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/36460/SITours/boston-brewery-tour-plus-lunch-or-dinner-in-boston-154134.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Whale Watching\",\n\t\t    \"description\": \"Experience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\",\n\t        \"mediaUrl\": \"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/3283/SITours/boston-whale-watching-cruise-in-boston-106485.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"https://ticketing.bostonharborcruises.com/WebStore/shop/ViewItems.aspx?CG=EXCR&C=WW\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"French Dining\",\n\t\t    \"description\": \"Gary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\",\n\t        \"mediaUrl\": \"http://garydanko.com/wp-content/uploads/garydanko/menu.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Seafood Cuisine\",\n\t\t    \"description\": \"Ostra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\",\n\t        \"mediaUrl\": \"http://ostraboston.com/images/uploads/gallery/teig_140415_8277.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    }\n    ]\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/?shell#carousel](https://docs.smooch.io/rest/?shell#carousel)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "8e75cb38-0f38-4b6c-bb98-fb32308bca78",
+							"id": "48e86f0b-a348-4834-8be4-28e4fc1bd274",
 							"name": "Carousel Example",
 							"originalRequest": {
 								"method": "POST",
@@ -6847,6 +6342,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
 							}
 						],
 						"body": {
@@ -6854,34 +6353,24 @@
 							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"list\",\n    \"items\": [\n    \t{\n\t    \t\"title\": \"Scandinave Getaway\",\n\t\t    \"description\": \"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\",\n\t\t    \"size\": \"large\",\n\t        \"mediaUrl\": \"https://www.scandinave.com/app/uploads/sites/5/2017/01/2015-upper-hot-bath-hp-820x779.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"postback\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"payload\": \"CHECK_AVAILABILITY\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Brewery Tour\",\n\t\t    \"description\": \"Explore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\",\n\t\t    \"size\": \"large\",\n\t        \"mediaUrl\": \"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/36460/SITours/boston-brewery-tour-plus-lunch-or-dinner-in-boston-154134.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Whale Watching\",\n\t\t    \"description\": \"Experience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\",\n\t\t    \"size\": \"large\",\n\t        \"mediaUrl\": \"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/3283/SITours/boston-whale-watching-cruise-in-boston-106485.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"https://ticketing.bostonharborcruises.com/WebStore/shop/ViewItems.aspx?CG=EXCR&C=WW\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"French Dining\",\n\t\t    \"description\": \"Gary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\",\n\t\t    \"size\": \"large\",\n\t        \"mediaUrl\": \"http://garydanko.com/wp-content/uploads/garydanko/menu.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    },\n\t    {\n\t    \t\"title\": \"Seafood Cuisine\",\n\t\t    \"description\": \"Ostra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\",\n\t\t    \"size\": \"large\",\n\t        \"mediaUrl\": \"http://ostraboston.com/images/uploads/gallery/teig_140415_8277.jpg\",\n\t        \"mediaType\": \"image/jpeg\",\n\t        \"actions\": [\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Learn more\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t},\n\t        \t{\n\t        \t\t\"type\": \"link\",\n\t        \t\t\"text\": \"Check availability\",\n\t        \t\t\"uri\": \"http://smoochopify.myshopify.com/products/big-hat\"\n\t        \t}\n\t    \t]\n\t    }\n    ]\n}"
 						},
 						"url": {
-							"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+							"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"v1",
 								"apps",
-								":appId",
+								"{{appId}}",
 								"appusers",
-								":userId",
+								"{{appUserId}}",
 								"messages"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
 							]
 						},
 						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#list](https://docs.smooch.io/rest/#list)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
 					},
 					"response": [
 						{
-							"id": "ef31625b-440a-4c7d-ad28-bdf8444f7eac",
+							"id": "8b614693-c56a-45b2-836e-96e741f792aa",
 							"name": "List Example",
 							"originalRequest": {
 								"method": "POST",
@@ -7041,736 +6530,6 @@
 							""
 						]
 					}
-				}
-			]
-		},
-		{
-			"name": "Integrations",
-			"description": "",
-			"item": [
-				{
-					"name": "List Integrations",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/integrations?integrationId=5ac3dae46764730022191ecf",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"integrations"
-							],
-							"query": [
-								{
-									"key": "integrationId",
-									"value": "5ac3dae46764730022191ecf"
-								}
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
-					},
-					"response": [
-						{
-							"id": "67d08996-ad2b-424a-9b81-fce24ffecec7",
-							"name": "Get App User Example",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:01:21 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d8-gedUBLZcXOnGWEoJ1s0W2v9MCLo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						}
-					]
-				},
-				{
-					"name": "Get Integration Menu",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/integrations/:integrationId/menu",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"integrations",
-								":integrationId",
-								"menu"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "integrationId",
-									"value": "5b43a0aff9afd80021136d33"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
-					},
-					"response": [
-						{
-							"id": "567312ae-fcf2-493a-9127-5c1afae0f10b",
-							"name": "Get App User Example",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:01:21 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d8-gedUBLZcXOnGWEoJ1s0W2v9MCLo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						}
-					]
-				},
-				{
-					"name": "Get App",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/integrations/:integrationId/menu",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"integrations",
-								":integrationId",
-								"menu"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "integrationId",
-									"value": "5b43a0aff9afd80021136d33"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
-					},
-					"response": [
-						{
-							"id": "89af388f-2661-41d3-b521-0e18f34ffe88",
-							"name": "Get App User Example",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:01:21 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d8-gedUBLZcXOnGWEoJ1s0W2v9MCLo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						}
-					]
-				},
-				{
-					"name": "Update Integration Menu",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"items\": [\n        {\n            \"type\": \"link\",\n            \"text\": \"this is a link\",\n            \"uri\": \"http://www.google.com\"\n        },\n        {\n        \t\"type\": \"link\",\n            \"text\": \"go Shopping\",\n            \"uri\": \"http://www.amazon.com\"\n        }\n    ]\n}"
-						},
-						"url": {
-							"raw": "{{url}}/v1/apps/:appId/integrations/:integrationId/menu",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"v1",
-								"apps",
-								":appId",
-								"integrations",
-								":integrationId",
-								"menu"
-							],
-							"variable": [
-								{
-									"key": "appId",
-									"value": "{{appId}}"
-								},
-								{
-									"key": "integrationId",
-									"value": "5b43a0aff9afd80021136d33"
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#appuser](https://docs.smooch.io/guide/key-concepts/#appuser)\n- API Docs: [https://docs.smooch.io/rest/#get-app-user](https://docs.smooch.io/rest/#get-app-user)"
-					},
-					"response": [
-						{
-							"id": "eb9c2c8e-6b93-40de-9b6b-9f3cf7f468c4",
-							"name": "Get App User Example",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 15:01:21 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"6d8-gedUBLZcXOnGWEoJ1s0W2v9MCLo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked",
-									"name": "Transfer-Encoding",
-									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"appUser\":{\"_id\":\"001484c9c86e65390b048455\",\"signedUpAt\":\"2018-06-20T15:14:26.306Z\",\"hasPaymentInfo\":false,\"conversationStarted\":true,\"credentialRequired\":true,\"clients\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"devices\":[{\"lastSeen\":\"2018-06-22T13:09:40.204Z\",\"platform\":\"web\",\"id\":\"5a10afcec7824b51ab1c53f05719f583\",\"info\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"raw\":{\"vendor\":\"smooch\",\"sdkVersion\":\"4.12.7\",\"URL\":\"localhost:4000\",\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\",\"referrer\":\"\",\"browserLanguage\":\"en-US\",\"currentUrl\":\"http://localhost:4000/\",\"currentTitle\":\"Local Chat (DEMO)\"},\"active\":true,\"primary\":true}],\"pendingClients\":[],\"properties\":{}}}"
-						}
-					]
 				}
 			]
 		}
