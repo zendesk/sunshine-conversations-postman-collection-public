@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "20320aee-c4d1-497b-a61b-43329dcc2fa2",
+		"_postman_id": "ff3c83a7-35b4-4846-9b31-a1dbe93444ae",
 		"name": "Smooch",
 		"description": "Smooch Public API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -17506,6 +17506,173 @@
 						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/?shell#webhooks](https://docs.smooch.io/rest/?shell#webhooks)"
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "WhatsApp Deployments",
+			"item": [
+				{
+					"name": "Create Deployment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hosting\": \"smooch\",\n    \"callbackUrl\": \"<callbackUrl>\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/whatsapp/deployments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"whatsapp",
+								"deployments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Phone Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verifiedNameCertificate\": \"<vnameCert>\",\n    \"phoneNumber\": \"<phoneNumber>\",\n    \"method\": \"sms\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/whatsapp/deployments/{{deploymentId}}/activate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"whatsapp",
+								"deployments",
+								"{{deploymentId}}",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"<code>\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/whatsapp/deployments/{{deploymentId}}/code/confirm",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"whatsapp",
+								"deployments",
+								"{{deploymentId}}",
+								"code",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deployment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hosting\": \"smooch\",\n    \"callbackUrl\": \"<callbackurl>\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/whatsapp/deployments/{{deploymentId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"whatsapp",
+								"deployments",
+								"{{deploymentId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0eada563-bfac-4609-ac55-98b843424eb6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "74ca0ea2-c206-41a4-a92f-264a9758b649",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		}
