@@ -6294,6 +6294,597 @@
 					"_postman_isSubFolder": true
 				},
 				{
+					"name": "Update Integrations",
+					"item": [
+						{
+							"name": "Update Web Messenger Integration",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										":integrationId"
+									],
+									"variable": [
+										{
+											"key": "integrationId",
+											"value": ""
+										}
+									]
+								},
+								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
+							},
+							"response": [
+								{
+									"name": "Update Web Messenger Integration",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												"{{appId}}",
+												"integrations",
+												"{{integrationId}}"
+											]
+										},
+										"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true",
+											"name": "access-control-allow-credentials",
+											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+											"name": "access-control-allow-origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "Retry-After",
+											"name": "access-control-expose-headers",
+											"description": "Lets a server whitelist headers that browsers are allowed to access."
+										},
+										{
+											"key": "cache-control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "cache-control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip",
+											"name": "content-encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8",
+											"name": "content-type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 27 Aug 2018 20:05:41 GMT",
+											"name": "date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"120-vGN5FIQhZYVDhD9dX/kEX4CmN90\"",
+											"name": "etag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "expires",
+											"value": "-1",
+											"name": "expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"name": "pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "server",
+											"value": "nginx/1.13.8",
+											"name": "server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "status",
+											"value": "200",
+											"name": "status",
+											"description": "Custom header"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=31536000",
+											"name": "strict-transport-security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding, Origin",
+											"name": "vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"name": "x-content-type-options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"name": "x-frame-options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"name": "x-xss-protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"integration\": {\n        \"type\": \"web\",\n        \"backgroundImageUrl\": null,\n        \"originWhitelist\": null,\n        \"integrationOrder\": null,\n        \"displayStyle\": \"button\",\n        \"actionColor\": \"0099ff\",\n        \"conversationColor\": \"0099ff\",\n        \"brandColor\": \"00ff00\",\n        \"_id\": \"5b493330223b8b07\",\n        \"businessName\": \"Smooch Interactive\",\n        \"status\": \"active\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Integration Profile (What's App Only)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"about\": \"Shoplifter is now on WhatsApp, come say hello! 👋\",\r\n    \"address\": \"1337 avenue Casgrain, Montréal (Québec) Canada\",\r\n    \"description\": \"ShopLifter helps you lift your shop.\",\r\n    \"email\": \"info@shoplifter.fun\",\r\n    \"vertical\": \"Shop Lifting\",\r\n    \"websites\": [ \"https://shoplifter.fun\", \"https://docs.shoplifter.fun\" ],\r\n    \"photoUrl\": \"https://assets.brandfolder.com/b6k4f6zh/original/smooch_symbol_rgb.png\"\r\n}"
+								},
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId/profile",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										":integrationId",
+										"profile"
+									],
+									"variable": [
+										{
+											"key": "integrationId",
+											"value": ""
+										}
+									]
+								},
+								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/whatsapp/#business-profile](https://docs.smooch.io/guide/whatsapp/#business-profile)\n- API Docs: [https://docs.smooch.io/rest/#update-integration-profile](https://docs.smooch.io/rest/#update-integration-profile)"
+							},
+							"response": [
+								{
+									"name": "Update Integration Profile (What's App Only)",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"about\": \"Shoplifter is now on WhatsApp, come say hello! 👋\",\r\n    \"address\": \"1337 avenue Casgrain, Montréal (Québec) Canada\",\r\n    \"description\": \"ShopLifter helps you lift your shop.\",\r\n    \"email\": \"info@shoplifter.fun\",\r\n    \"vertical\": \"Shop Lifting\",\r\n    \"websites\": [ \"https://shoplifter.fun\", \"https://docs.shoplifter.fun\" ],\r\n    \"photoUrl\": \"https://assets.brandfolder.com/b6k4f6zh/original/smooch_symbol_rgb.png\"\r\n}"
+										},
+										"url": {
+											"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId/profile",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{apiVersion}}",
+												"apps",
+												"{{appId}}",
+												"integrations",
+												":integrationId",
+												"profile"
+											],
+											"variable": [
+												{
+													"key": "integrationId",
+													"value": ""
+												}
+											]
+										},
+										"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true",
+											"name": "access-control-allow-credentials",
+											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+											"name": "access-control-allow-origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "Retry-After",
+											"name": "access-control-expose-headers",
+											"description": "Lets a server whitelist headers that browsers are allowed to access."
+										},
+										{
+											"key": "cache-control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "cache-control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip",
+											"name": "content-encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8",
+											"name": "content-type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 27 Aug 2018 20:05:41 GMT",
+											"name": "date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"120-vGN5FIQhZYVDhD9dX/kEX4CmN90\"",
+											"name": "etag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "expires",
+											"value": "-1",
+											"name": "expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"name": "pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "server",
+											"value": "nginx/1.13.8",
+											"name": "server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "status",
+											"value": "200",
+											"name": "status",
+											"description": "Custom header"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=31536000",
+											"name": "strict-transport-security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding, Origin",
+											"name": "vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"name": "x-content-type-options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"name": "x-frame-options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"name": "x-xss-protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update Integration Profile Photo (What's App Only)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "source",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId/profile/photo",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										":integrationId",
+										"profile",
+										"photo"
+									],
+									"variable": [
+										{
+											"key": "integrationId",
+											"value": ""
+										}
+									]
+								},
+								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/whatsapp/#business-profile](https://docs.smooch.io/guide/whatsapp/#business-profile)\n- API Docs: [https://docs.smooch.io/rest/#update-integration-profile-photo](https://docs.smooch.io/rest/#update-integration-profile-photo)"
+							},
+							"response": [
+								{
+									"name": "Update Integration Profile Photo (What's App Only)",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "source",
+													"type": "file",
+													"src": []
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId/profile/photo",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{apiVersion}}",
+												"apps",
+												"{{appId}}",
+												"integrations",
+												":integrationId",
+												"profile",
+												"photo"
+											],
+											"variable": [
+												{
+													"key": "integrationId",
+													"value": ""
+												}
+											]
+										},
+										"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true",
+											"name": "access-control-allow-credentials",
+											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+											"name": "access-control-allow-origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "Retry-After",
+											"name": "access-control-expose-headers",
+											"description": "Lets a server whitelist headers that browsers are allowed to access."
+										},
+										{
+											"key": "cache-control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "cache-control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip",
+											"name": "content-encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8",
+											"name": "content-type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 27 Aug 2018 20:05:41 GMT",
+											"name": "date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"120-vGN5FIQhZYVDhD9dX/kEX4CmN90\"",
+											"name": "etag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "expires",
+											"value": "-1",
+											"name": "expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"name": "pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "server",
+											"value": "nginx/1.13.8",
+											"name": "server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "status",
+											"value": "200",
+											"name": "status",
+											"description": "Custom header"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=31536000",
+											"name": "strict-transport-security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding, Origin",
+											"name": "vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"name": "x-content-type-options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"name": "x-frame-options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"name": "x-xss-protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n    \"photoUrl\":\r\n        \"https://api.smooch.io/v1.1/icons/whatsapp/5c76b7f0785e585c5162829e/5c76b7f9785e585c516282a2?t=1551734672779\"\r\n}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "List Integrations",
 					"request": {
 						"method": "GET",
@@ -6795,191 +7386,6 @@
 							],
 							"cookie": [],
 							"body": "{}"
-						}
-					]
-				},
-				{
-					"name": "Update Integration (WebMessenger Only)",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{JWT}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/:integrationId",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"{{apiVersion}}",
-								"apps",
-								"{{appId}}",
-								"integrations",
-								":integrationId"
-							],
-							"variable": [
-								{
-									"key": "integrationId",
-									"value": ""
-								}
-							]
-						},
-						"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
-					},
-					"response": [
-						{
-							"name": "Update Integration (WebMessenger Only)",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										"{{appId}}",
-										"integrations",
-										"{{integrationId}}"
-									]
-								},
-								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/key-concepts/#integration](https://docs.smooch.io/guide/key-concepts/#integration)\n- API Docs: [https://docs.smooch.io/rest/#manage-integrations](https://docs.smooch.io/rest/#manage-integrations)"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true",
-									"name": "access-control-allow-credentials",
-									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-									"name": "access-control-allow-origin",
-									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-								},
-								{
-									"key": "access-control-expose-headers",
-									"value": "Retry-After",
-									"name": "access-control-expose-headers",
-									"description": "Lets a server whitelist headers that browsers are allowed to access."
-								},
-								{
-									"key": "cache-control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "cache-control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "content-encoding",
-									"value": "gzip",
-									"name": "content-encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8",
-									"name": "content-type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "date",
-									"value": "Mon, 27 Aug 2018 20:05:41 GMT",
-									"name": "date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"120-vGN5FIQhZYVDhD9dX/kEX4CmN90\"",
-									"name": "etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "expires",
-									"value": "-1",
-									"name": "expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "pragma",
-									"value": "no-cache",
-									"name": "pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "server",
-									"value": "nginx/1.13.8",
-									"name": "server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "status",
-									"value": "200",
-									"name": "status",
-									"description": "Custom header"
-								},
-								{
-									"key": "strict-transport-security",
-									"value": "max-age=31536000",
-									"name": "strict-transport-security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "vary",
-									"value": "Accept-Encoding, Origin",
-									"name": "vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "x-content-type-options",
-									"value": "nosniff",
-									"name": "x-content-type-options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "x-frame-options",
-									"value": "SAMEORIGIN",
-									"name": "x-frame-options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "x-xss-protection",
-									"value": "1; mode=block",
-									"name": "x-xss-protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"integration\": {\n        \"type\": \"web\",\n        \"backgroundImageUrl\": null,\n        \"originWhitelist\": null,\n        \"integrationOrder\": null,\n        \"displayStyle\": \"button\",\n        \"actionColor\": \"0099ff\",\n        \"conversationColor\": \"0099ff\",\n        \"brandColor\": \"00ff00\",\n        \"_id\": \"5b493330223b8b07\",\n        \"businessName\": \"Smooch Interactive\",\n        \"status\": \"active\"\n    }\n}"
 						}
 					]
 				}
