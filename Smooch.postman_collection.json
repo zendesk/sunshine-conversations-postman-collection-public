@@ -18258,11 +18258,16 @@
 		}
 	],
 	"auth": {
-		"type": "bearer",
-		"bearer": [
+		"type": "basic",
+		"basic": [
 			{
-				"key": "token",
-				"value": "{{JWT}}",
+				"key": "password",
+				"value": "{{secret}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{keyId}}",
 				"type": "string"
 			}
 		]
