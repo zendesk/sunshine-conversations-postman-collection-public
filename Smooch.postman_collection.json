@@ -6220,7 +6220,7 @@
 										"integrations"
 									]
 								},
-								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/wechat/#configuring-wechat](https://docs.smooch.io/guide/wechat/#configuring-wechat)\n- API Docs: [https://docs.smooch.io/rest/#wechat](https://docs.smooch.io/rest/#wechat)"
+								"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/whatsapp/#how-to-enable-the-channel](https://docs.smooch.io/guide/whatsapp/#how-to-enable-the-channel)\n- API Docs: [https://docs.smooch.io/rest/#integration-schemas-whatsapp](https://docs.smooch.io/rest/#integration-schemas-whatsapp)"
 							},
 							"response": [
 								{
