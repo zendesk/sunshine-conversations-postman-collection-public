@@ -6206,7 +6206,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"type\": \"whatsapp\",\n    \"deploymentId\": \"<whatsappDeploymentId>\"\n}"
+									"raw": "{\n    \"type\": \"whatsapp\",\n    \"deploymentId\": \"<whatsappDeploymentId>\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations",
@@ -6241,7 +6241,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n\t\"type\": \"whatsapp\",\n    \"deploymentId\": \"<whatsappDeploymentId>\"\n}",
+											"raw": "{\n    \"type\": \"whatsapp\",\n    \"deploymentId\": \"<whatsappDeploymentId>\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
