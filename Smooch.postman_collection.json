@@ -10649,7 +10649,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montreal\"\n    }\n}"
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montréal\"\n    }\n}"
 						},
 						"url": {
 							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/appusers/{{appUserId}}/messages",
@@ -10680,7 +10680,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montreal\"\n    }\n}"
+									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montréal\"\n    }\n}"
 								},
 								"url": {
 									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
@@ -10803,7 +10803,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\"message\":{\"text\":\"Location shared:\nhttps://maps.google.com/maps?q=45.5261583,-73.595346\",\"coordinates\":{\"lat\": 45.5261583,\"long\": -73.595346},\"location\":{\"address\":\"5333 avenue Casgrain\",\"name\":\"Zendesk Montreal\"},\"type\":\"location\",\"role\":\"appMaker\",\"received\":1529675742.595,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cffdec19c1a00219056c5\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529675742.595,\"appUserLastRead\":1529675346.151}}"
+							"body": "{\"message\":{\"text\":\"Location shared:\nhttps://maps.google.com/maps?q=45.5261583,-73.595346\",\"coordinates\":{\"lat\": 45.5261583,\"long\": -73.595346},\"location\":{\"address\":\"5333 avenue Casgrain\",\"name\":\"Zendesk Montréal\"},\"type\":\"location\",\"role\":\"appMaker\",\"received\":1529675742.595,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cffdec19c1a00219056c5\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529675742.595,\"appUserLastRead\":1529675346.151}}"
 						}
 					]
 				}
