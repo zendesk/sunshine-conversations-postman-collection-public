@@ -14754,7 +14754,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"This message was not received by whatsapp\",\n\t\"override\": {\n\t\t\"whatsapp\": {\n\t\t\t\"payload\": {\n\t\t\t\t\"type\": \"hsm\",\n\t\t\t\t\"hsm\": {\n\t\t\t\t\t\"namespace\": \"whatsapp:hsm:communications:smoochio\",\n\t\t\t\t\t\"element_name\": \"hello_world\",\n\t\t\t\t\t\"language\": {\n\t\t\t\t\t\t\"policy\": \"fallback\",\n\t\t\t\t\t\t\"code\": \"en_US\"\n\t\t\t\t\t},\n\t\t\t\t\t\"localizable_params\": [{\n\t\t\t\t\t\t\"default\": \"My User Name\"\n\t\t\t\t\t},{\n\t\t\t\t\t\t\"default\": \"My Agent Name\"\n\t\t\t\t\t}]\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t}\n}"
+									"raw": "{\n   \"role\":\"appMaker\",\n   \"messageSchema\":\"whatsapp\",\n   \"message\":{\n      \"type\":\"hsm\",\n      \"hsm\":{\n         \"namespace\":\"whatsapp:hsm:communications:smoochio\",\n         \"element_name\":\"hello_world\",\n         \"language\":{\n            \"policy\":\"fallback\",\n            \"code\":\"en_US\"\n         },\n         \"localizable_params\":[\n            {\n               \"default\":\"My User Name\"\n            },\n            {\n               \"default\":\"My Agent Name\"\n            }\n         ]\n      }\n   }\n}"
 								},
 								"url": {
 									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/appusers/{{appUserId}}/messages",
