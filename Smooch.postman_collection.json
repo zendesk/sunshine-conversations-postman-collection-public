@@ -10632,6 +10632,180 @@
 							"body": "{\"message\":{\"text\":\"1. Scandinave Getaway\\nEnjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\\nLearn more: http://smoochopify.myshopify.com/products/big-hat\\n\\n2. Brewery Tour\\nExplore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\\nLearn more: http://smoochopify.myshopify.com/products/big-hat\\nCheck availability: http://smoochopify.myshopify.com/products/big-hat\\n\\n3. Whale Watching\\nExperience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\\nLearn more: http://smoochopify.myshopify.com/products/big-hat\\nCheck availability: https://ticketing.bostonharborcruises.com/WebStore/shop/ViewItems.aspx?CG=EXCR&amp;C=WW\\n\\n4. French Dining\\nGary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\\nLearn more: http://smoochopify.myshopify.com/products/big-hat\\nCheck availability: http://smoochopify.myshopify.com/products/big-hat\\n\\n5. Seafood Cuisine\\nOstra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\\nLearn more: http://smoochopify.myshopify.com/products/big-hat\\nCheck availability: http://smoochopify.myshopify.com/products/big-hat\",\"items\":[{\"title\":\"Scandinave Getaway\",\"description\":\"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare\",\"size\":\"large\",\"mediaUrl\":\"https://www.scandinave.com/app/uploads/sites/5/2017/01/2015-upper-hot-bath-hp-820x779.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cffdec19c1a00219056d2\",\"actions\":[{\"text\":\"Learn more\",\"_id\":\"5b2cffdec19c1a00219056d4\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"},{\"text\":\"Check availability\",\"payload\":\"CHECK_AVAILABILITY\",\"_id\":\"5b2cffdec19c1a00219056d3\",\"uri\":\"\",\"type\":\"postback\"}]},{\"title\":\"Brewery Tour\",\"description\":\"Explore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\",\"size\":\"large\",\"mediaUrl\":\"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/36460/SITours/boston-brewery-tour-plus-lunch-or-dinner-in-boston-154134.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cffdec19c1a00219056cf\",\"actions\":[{\"text\":\"Learn more\",\"_id\":\"5b2cffdec19c1a00219056d1\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"},{\"text\":\"Check availability\",\"_id\":\"5b2cffdec19c1a00219056d0\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"}]},{\"title\":\"Whale Watching\",\"description\":\"Experience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\",\"size\":\"large\",\"mediaUrl\":\"https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/3283/SITours/boston-whale-watching-cruise-in-boston-106485.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cffdec19c1a00219056cc\",\"actions\":[{\"text\":\"Learn more\",\"_id\":\"5b2cffdec19c1a00219056ce\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"},{\"text\":\"Check availability\",\"_id\":\"5b2cffdec19c1a00219056cd\",\"uri\":\"https://ticketing.bostonharborcruises.com/WebStore/shop/ViewItems.aspx?CG=EXCR&C=WW\",\"type\":\"link\"}]},{\"title\":\"French Dining\",\"description\":\"Gary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\",\"size\":\"large\",\"mediaUrl\":\"http://garydanko.com/wp-content/uploads/garydanko/menu.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cffdec19c1a00219056c9\",\"actions\":[{\"text\":\"Learn more\",\"_id\":\"5b2cffdec19c1a00219056cb\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"},{\"text\":\"Check availability\",\"_id\":\"5b2cffdec19c1a00219056ca\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"}]},{\"title\":\"Seafood Cuisine\",\"description\":\"Ostra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\",\"size\":\"large\",\"mediaUrl\":\"http://ostraboston.com/images/uploads/gallery/teig_140415_8277.jpg\",\"mediaType\":\"image/jpeg\",\"_id\":\"5b2cffdec19c1a00219056c6\",\"actions\":[{\"text\":\"Learn more\",\"_id\":\"5b2cffdec19c1a00219056c8\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"},{\"text\":\"Check availability\",\"_id\":\"5b2cffdec19c1a00219056c7\",\"uri\":\"http://smoochopify.myshopify.com/products/big-hat\",\"type\":\"link\"}]}],\"type\":\"list\",\"role\":\"appMaker\",\"received\":1529675742.595,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cffdec19c1a00219056c5\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529675742.595,\"appUserLastRead\":1529675346.151}}"
 						}
 					]
+				},
+				{
+					"name": "Location Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montréal\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/appusers/{{appUserId}}/messages",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"apps",
+								"{{appId}}",
+								"appusers",
+								"{{appUserId}}",
+								"messages"
+							]
+						},
+						"description": "### For more information\n- Guide: [https://docs.smooch.io/guide/sending-messages/](https://docs.smooch.io/guide/sending-messages/)\n- API Docs: [https://docs.smooch.io/rest/#location](https://docs.smooch.io/rest/#location)\n\nSee the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
+					},
+					"response": [
+						{
+							"name": "Location Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"location\",\n    \"coordinates\": {\n        \"lat\": 45.5261583,\n        \"long\": -73.595346\n    }\n,   \"location\": {\n        \"address\": \"5333 avenue Casgrain\",\n        \"name\": \"Zendesk Montréal\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										":appId",
+										"appusers",
+										":userId",
+										"messages"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "{{appId}}"
+										},
+										{
+											"key": "userId",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4819",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Jun 2018 13:55:42 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d3-xGhXyxF1D0bwZM8R6IRlUOPMHoE\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Expires",
+									"value": "-1",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Poll-Interval",
+									"value": "30",
+									"name": "Poll-Interval",
+									"description": "Custom header"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.13.8",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":{\"text\":\"Location shared:\nhttps://maps.google.com/maps?q=45.5261583,-73.595346\",\"coordinates\":{\"lat\": 45.5261583,\"long\": -73.595346},\"location\":{\"address\":\"5333 avenue Casgrain\",\"name\":\"Zendesk Montréal\"},\"type\":\"location\",\"role\":\"appMaker\",\"received\":1529675742.595,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cffdec19c1a00219056c5\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529675742.595,\"appUserLastRead\":1529675346.151}}"
+						}
+					]
 				}
 			],
 			"description": "[https://docs.smooch.io/rest/?shell#message-types](https://docs.smooch.io/rest/?shell#message-types)",
