@@ -2185,21 +2185,6 @@
 				{
 					"name": "Unlink App User from Channel",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ovKE2RrmEEleVYVSkuHzMyowD_2DMfmKD28INXICYN3uIWjCQDowQiNk7_auCWowxUfVTZEB3y1WV7-f_XAU8w",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "act_5dcdabecc9a99e3164d6b74f",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [
 							{
