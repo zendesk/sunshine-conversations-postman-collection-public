@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ec780aac-a8b9-4fc4-aefe-e3daae65826f",
+		"_postman_id": "21ccc5d6-8891-4ecc-a28b-052e9bbf79c2",
 		"name": "Smooch",
 		"description": "Smooch Public API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -777,7 +777,7 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "App User",
@@ -2608,7 +2608,7 @@
 				}
 			],
 			"description": "[https://docs.smooch.io/rest/#app-user](https://docs.smooch.io/rest/#app-user)",
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Attachments",
@@ -3014,7 +3014,7 @@
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Apps",
@@ -3661,7 +3661,7 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Conversations",
@@ -4055,136 +4055,6 @@
 					},
 					"response": [
 						{
-							"name": "Delete Single Message Example",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"text\": \"Which do you prefer?\",\n    \"role\": \"appMaker\"\n}"
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages/:messageId",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId",
-										"messages",
-										":messageId"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										},
-										{
-											"key": "messageId",
-											"value": "5b2bc730e64e65002244ad84"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Length",
-									"value": "2",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 22 Jun 2018 14:15:43 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{}"
-						},
-						{
 							"name": "Get Messages Example",
 							"originalRequest": {
 								"method": "GET",
@@ -4322,6 +4192,136 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"884ac26bfa519a0bb4cb0162\",\n        \"appMakerLastRead\": 1529675979.541,\n        \"appUserLastRead\": 1529675790.625\n    },\n    \"messages\": [\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529600550.492,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bda263d0a5a002214feb7\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to help.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529601040.976,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bdc10b5d8ad0022f7d7ab\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Hey John! I'd be happy to try.\",\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529603284.533,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2be4d4ccc72400215b7a3b\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"I am totally in love with this month’s subscription box 😍😍😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"received\": 1529603624.354,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2be628f453be00221dbff2\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"This is where I am at the moment.\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529603864.317,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 190607,\n            \"_id\": \"5b2be718f453be00221dc88c\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529604548.135,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2be9c44a8aa10022e68fa3\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Do you have this jacket in stock at the moment?\",\n            \"mediaType\": \"image/jpeg\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n            \"type\": \"image\",\n            \"role\": \"appUser\",\n            \"received\": 1529605374.633,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"mediaSize\": 38619,\n            \"_id\": \"5b2becfeccc72400215bb509\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Glad I could help!\",\n            \"mediaType\": \"image/gif\",\n            \"mediaUrl\": \"https://smooch.io/static_assets/images/rich-message-framework/human-support.gif\",\n            \"type\": \"image\",\n            \"role\": \"appMaker\",\n            \"received\": 1529605449.6,\n            \"mediaSize\": 2230627,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bed495e38ff002208cd44\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"Help John understands how he’s doing. Please rate your conversation\",\n            \"actions\": [\n                {\n                    \"text\": \"😍\",\n                    \"payload\": \"great\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc2\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"🙂\",\n                    \"payload\": \"good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc1\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"☹️\",\n                    \"payload\": \"not so good\",\n                    \"_id\": \"5b2bf9615e44e0002265ebc0\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                },\n                {\n                    \"text\": \"😠\",\n                    \"payload\": \"really not good at all\",\n                    \"_id\": \"5b2bf9615e44e0002265ebbf\",\n                    \"uri\": \"\",\n                    \"type\": \"reply\"\n                }\n            ],\n            \"type\": \"text\",\n            \"role\": \"appMaker\",\n            \"received\": 1529608545.509,\n            \"authorId\": \"00uejytoekz520ZEG0h7\",\n            \"avatarUrl\": \"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\n            \"name\": \"Galifrey\",\n            \"_id\": \"5b2bf9615e44e0002265ebbe\",\n            \"source\": {\n                \"type\": \"api\"\n            }\n        },\n        {\n            \"text\": \"😍\",\n            \"type\": \"text\",\n            \"role\": \"appUser\",\n            \"payload\": \"great\",\n            \"received\": 1529608552.93,\n            \"authorId\": \"001484c9c86e65390b048455\",\n            \"name\": \"Acrobatic Rat\",\n            \"_id\": \"5b2bf968751b7c00225ebe5b\",\n            \"source\": {\n                \"type\": \"web\",\n                \"id\": \"5a10afcec7824b51ab1c53f05719f583\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "Delete Single Message Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"Which do you prefer?\",\n    \"role\": \"appMaker\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages/:messageId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										":appId",
+										"appusers",
+										":userId",
+										"messages",
+										":messageId"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "{{appId}}"
+										},
+										{
+											"key": "userId",
+											"value": "{{userId}}"
+										},
+										{
+											"key": "messageId",
+											"value": "5b2bc730e64e65002244ad84"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 22 Jun 2018 14:15:43 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Expires",
+									"value": "-1",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.13.8",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
 						}
 					]
 				},
@@ -5157,7 +5157,7 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Integrations",
@@ -5939,6 +5939,45 @@
 							},
 							"response": [
 								{
+									"name": "Web Messenger",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"type\": \"web\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/{{appId}}/integrations",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												"{{appId}}",
+												"integrations"
+											]
+										},
+										"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/web-messenger/#installation](https://docs.smooch.io/guide/web-messenger/#installation)\n- API Docs: [https://docs.smooch.io/rest/#web-messenger-integration](https://docs.smooch.io/rest/#web-messenger-integration)"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": "{\n  \"integration\": {\n    \"_id\": \"582dedf230e788746891281a\",\n    \"type\": \"web\",\n    \"integrationOrder\": [\n        \"59fc8466260f48003505228b\",\n        \"59d79780481d34002b7d3617\"\n    ],\n    \"originWhitelist\": [\n        \"https://yourdomain.com\"\n    ],\n    \"businessName\": \"Shoplifter\",\n    \"brandColor\": \"00ff00\",\n    \"fixedIntroPane\": true,\n    \"conversationColor\": \"dd00ee\",\n    \"backgroundImageUrl\": \"https://a-beautiful-tile.png\",\n    \"actionColor\": \"eeff00\",\n    \"displayStyle\": \"button\",\n    \"buttonWidth\": \"90\",\n    \"buttonHeight\": \"90\",\n    \"status\": \"active\"\n  }\n}"
+								},
+								{
 									"name": "Web Messenger ex 2",
 									"originalRequest": {
 										"method": "POST",
@@ -6079,45 +6118,6 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"integration\": {\n        \"type\": \"web\",\n        \"displayStyle\": \"button\",\n        \"actionColor\": \"0099ff\",\n        \"conversationColor\": \"0099ff\",\n        \"brandColor\": \"65758e\",\n        \"_id\": \"5b848334333333060022c53073\",\n        \"status\": \"active\"\n    }\n}"
-								},
-								{
-									"name": "Web Messenger",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{JWT}}"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"type\": \"web\"\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/{{appId}}/integrations",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												"{{appId}}",
-												"integrations"
-											]
-										},
-										"description": "### For more information\n- Guide Docs: [https://docs.smooch.io/guide/web-messenger/#installation](https://docs.smooch.io/guide/web-messenger/#installation)\n- API Docs: [https://docs.smooch.io/rest/#web-messenger-integration](https://docs.smooch.io/rest/#web-messenger-integration)"
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "Text",
-									"header": [],
-									"cookie": [],
-									"body": "{\n  \"integration\": {\n    \"_id\": \"582dedf230e788746891281a\",\n    \"type\": \"web\",\n    \"integrationOrder\": [\n        \"59fc8466260f48003505228b\",\n        \"59d79780481d34002b7d3617\"\n    ],\n    \"originWhitelist\": [\n        \"https://yourdomain.com\"\n    ],\n    \"businessName\": \"Shoplifter\",\n    \"brandColor\": \"00ff00\",\n    \"fixedIntroPane\": true,\n    \"conversationColor\": \"dd00ee\",\n    \"backgroundImageUrl\": \"https://a-beautiful-tile.png\",\n    \"actionColor\": \"eeff00\",\n    \"displayStyle\": \"button\",\n    \"buttonWidth\": \"90\",\n    \"buttonHeight\": \"90\",\n    \"status\": \"active\"\n  }\n}"
 								}
 							]
 						},
@@ -6274,7 +6274,7 @@
 							]
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -6866,7 +6866,7 @@
 							]
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -7359,7 +7359,7 @@
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Message Types",
@@ -8273,143 +8273,6 @@
 							},
 							"response": [
 								{
-									"name": "Action:  location request Example",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Let us know where you are.\",\n    \"actions\": [\n    \t{\n\t        \"type\": \"locationRequest\",\n\t        \"text\": \"Send Location\"\n    \t}\n    ]\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												":appId",
-												"appusers",
-												":userId",
-												"messages"
-											],
-											"variable": [
-												{
-													"key": "appId",
-													"value": "{{appId}}"
-												},
-												{
-													"key": "userId",
-													"value": "{{userId}}"
-												}
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Cache-Control",
-											"value": "private, no-cache, no-store, must-revalidate",
-											"name": "Cache-Control",
-											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive",
-											"name": "Connection",
-											"description": "Options that are desired for the connection"
-										},
-										{
-											"key": "Content-Length",
-											"value": "534",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 22 Jun 2018 13:18:58 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"216-UJihrc4ys3/jr9sk2dkvWG5Y7Tk\"",
-											"name": "ETag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "Expires",
-											"value": "-1",
-											"name": "Expires",
-											"description": "Gives the date/time after which the response is considered stale"
-										},
-										{
-											"key": "Poll-Interval",
-											"value": "30",
-											"name": "Poll-Interval",
-											"description": "Custom header"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache",
-											"name": "Pragma",
-											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-										},
-										{
-											"key": "Server",
-											"value": "nginx/1.13.8",
-											"name": "Server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000",
-											"name": "Strict-Transport-Security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "Vary",
-											"value": "X-HTTP-Method-Override",
-											"name": "Vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff",
-											"name": "X-Content-Type-Options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN",
-											"name": "X-Frame-Options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block",
-											"name": "X-XSS-Protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send Location\",\"_id\":\"5b2cf7422bb60400222bf299\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529673538.639,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf7422bb60400222bf298\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529673538.639,\"appUserLastRead\":1529672980.196}}"
-								},
-								{
 									"name": "Action: quick reply Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8545,6 +8408,143 @@
 									],
 									"cookie": [],
 									"body": "{\"message\":{\"text\":\"Help John understand how he’s doing. Please rate your conversation.\",\"actions\":[{\"text\":\"😍\",\"payload\":\"great\",\"_id\":\"5b2bfadff453be00221e7466\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"🙂\",\"payload\":\"good\",\"_id\":\"5b2bfadff453be00221e7465\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"☹️\",\"payload\":\"not so good\",\"_id\":\"5b2bfadff453be00221e7464\",\"uri\":\"\",\"type\":\"reply\"},{\"text\":\"😠\",\"payload\":\"really not good at all\",\"_id\":\"5b2bfadff453be00221e7463\",\"uri\":\"\",\"type\":\"reply\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529608927.039,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2bfadff453be00221e7462\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529608927.039,\"appUserLastRead\":1529608552.93}}"
+								},
+								{
+									"name": "Action:  location request Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"Let us know where you are.\",\n    \"actions\": [\n    \t{\n\t        \"type\": \"locationRequest\",\n\t        \"text\": \"Send Location\"\n    \t}\n    ]\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												":appId",
+												"appusers",
+												":userId",
+												"messages"
+											],
+											"variable": [
+												{
+													"key": "appId",
+													"value": "{{appId}}"
+												},
+												{
+													"key": "userId",
+													"value": "{{userId}}"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "Cache-Control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Length",
+											"value": "534",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 22 Jun 2018 13:18:58 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"216-UJihrc4ys3/jr9sk2dkvWG5Y7Tk\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Expires",
+											"value": "-1",
+											"name": "Expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "Poll-Interval",
+											"value": "30",
+											"name": "Poll-Interval",
+											"description": "Custom header"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache",
+											"name": "Pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "Server",
+											"value": "nginx/1.13.8",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000",
+											"name": "Strict-Transport-Security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "Vary",
+											"value": "X-HTTP-Method-Override",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff",
+											"name": "X-Content-Type-Options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN",
+											"name": "X-Frame-Options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block",
+											"name": "X-XSS-Protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send Location\",\"_id\":\"5b2cf7422bb60400222bf299\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1529673538.639,\"authorId\":\"00uejytoekz520ZEG0h7\",\"avatarUrl\":\"https://media.smooch.io/5ac3da9539fe6c0022447259/icons/appicon.jpg\",\"name\":\"Galifrey\",\"_id\":\"5b2cf7422bb60400222bf298\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529673538.639,\"appUserLastRead\":1529672980.196}}"
 								}
 							]
 						},
@@ -9020,7 +9020,7 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -9621,143 +9621,6 @@
 					},
 					"response": [
 						{
-							"name": "Image with text",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"image\",\n    \"text\": \"Do you have this jacket in stock at the moment?\",\n    \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n    \"mediaType\": \"image/jpeg\"\n}"
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										":appId",
-										"appusers",
-										":userId",
-										"messages"
-									],
-									"variable": [
-										{
-											"key": "appId",
-											"value": "{{appId}}"
-										},
-										{
-											"key": "userId",
-											"value": "{{userId}}"
-										}
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "Cache-Control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Length",
-									"value": "509",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 21 Jun 2018 18:09:08 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1fd-Gpqr6xC/jYHbpneq+EWbIMAaibo\"",
-									"name": "ETag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "Expires",
-									"value": "-1",
-									"name": "Expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "Poll-Interval",
-									"value": "30",
-									"name": "Poll-Interval",
-									"description": "Custom header"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache",
-									"name": "Pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "Server",
-									"value": "nginx/1.13.8",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Vary",
-									"value": "X-HTTP-Method-Override",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\"message\":{\"text\":\"Do you have this jacket in stock at the moment?\",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\"type\":\"image\",\"role\":\"appUser\",\"received\":1529604548.135,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"mediaSize\":38619,\"_id\":\"5b2be9c44a8aa10022e68fa3\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529604548.135}}"
-						},
-						{
 							"name": "Image Example",
 							"originalRequest": {
 								"method": "POST",
@@ -9893,6 +9756,143 @@
 							],
 							"cookie": [],
 							"body": "{\"message\":{\"text\":\" \",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://smooch.io/static_assets/images/about/retina/city@2x.jpg\",\"type\":\"image\",\"role\":\"appUser\",\"received\":1529603927.961,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"mediaSize\":190607,\"_id\":\"5b2be7588b1e5d002128a1ab\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529603927.961}}"
+						},
+						{
+							"name": "Image with text",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": \"appUser\",\n    \"type\": \"image\",\n    \"text\": \"Do you have this jacket in stock at the moment?\",\n    \"mediaUrl\": \"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\n    \"mediaType\": \"image/jpeg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										":appId",
+										"appusers",
+										":userId",
+										"messages"
+									],
+									"variable": [
+										{
+											"key": "appId",
+											"value": "{{appId}}"
+										},
+										{
+											"key": "userId",
+											"value": "{{userId}}"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "Cache-Control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "509",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jun 2018 18:09:08 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1fd-Gpqr6xC/jYHbpneq+EWbIMAaibo\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "Expires",
+									"value": "-1",
+									"name": "Expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "Poll-Interval",
+									"value": "30",
+									"name": "Poll-Interval",
+									"description": "Custom header"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache",
+									"name": "Pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.13.8",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":{\"text\":\"Do you have this jacket in stock at the moment?\",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://smooch.io/static_assets/images/shoplifter/double-breasted-coat.jpg\",\"type\":\"image\",\"role\":\"appUser\",\"received\":1529604548.135,\"authorId\":\"001484c9c86e65390b048455\",\"name\":\"Acrobatic Rat\",\"mediaSize\":38619,\"_id\":\"5b2be9c44a8aa10022e68fa3\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":0,\"_id\":\"884ac26bfa519a0bb4cb0162\",\"appMakerLastRead\":1529603542.96,\"appUserLastRead\":1529604548.135}}"
 						}
 					]
 				},
@@ -10802,7 +10802,7 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "OAuth Endpoints",
@@ -10951,7 +10951,7 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Passthrough API",
@@ -11176,7 +11176,7 @@
 							"response": []
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -11514,6 +11514,155 @@
 							"body": "{\n    \"message\": {\n        \"text\": \"This message was not received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087174.506,\n        \"authorId\": \"00ufq983xh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed48631f7220c08b62\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"c0021c2a74305c84313bc2ab\",\n        \"appMakerLastRead\": 1536087174.506,\n        \"appUserLastRead\": 1536086905.124\n    }\n}"
 						},
 						{
+							"name": "Using Passthrough Api ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"This message will be received by whatsapp \",\n\t\"override\": {\n\t\t\"whatsapp\": {\n\t\t\t\"payload\": {\n\t\t\t\t\"type\": \"hsm\",\n\t\t\t\t\"hsm\": {\n\t\t\t\t\t\"namespace\": \"whatsapp:hsm:communications:smoochio\",\n\t\t\t\t\t\"element_name\": \"hello_world\",\n\t\t\t\t\t\"language\": {\n\t\t\t\t\t\t\"policy\": \"fallback\",\n\t\t\t\t\t\t\"code\": \"en_US\"\n\t\t\t\t\t},\n\t\t\t\t\t\"localizable_params\": [{\n\t\t\t\t\t\t\"default\": \"My User Name\"\n\t\t\t\t\t},{\n\t\t\t\t\t\t\"default\": \"My Agent Name\"\n\t\t\t\t\t}]\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"{{appId}}",
+										"appusers",
+										"{{appUserId}}",
+										"messages"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": ""
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"name": "access-control-allow-origin",
+									"description": ""
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Retry-After",
+									"name": "access-control-expose-headers",
+									"description": ""
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "cache-control",
+									"description": ""
+								},
+								{
+									"key": "content-length",
+									"value": "444",
+									"name": "content-length",
+									"description": ""
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": ""
+								},
+								{
+									"key": "date",
+									"value": "Tue, 04 Sep 2018 18:55:56 GMT",
+									"name": "date",
+									"description": ""
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1bc-QacMyuxojYu8FH/l89wZuLDCt2g\"",
+									"name": "etag",
+									"description": ""
+								},
+								{
+									"key": "expires",
+									"value": "-1",
+									"name": "expires",
+									"description": ""
+								},
+								{
+									"key": "poll-interval",
+									"value": "30",
+									"name": "poll-interval",
+									"description": ""
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache",
+									"name": "pragma",
+									"description": ""
+								},
+								{
+									"key": "server",
+									"value": "nginx/1.13.8",
+									"name": "server",
+									"description": ""
+								},
+								{
+									"key": "status",
+									"value": "201",
+									"name": "status",
+									"description": ""
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000",
+									"name": "strict-transport-security",
+									"description": ""
+								},
+								{
+									"key": "vary",
+									"value": "X-HTTP-Method-Override, Origin",
+									"name": "vary",
+									"description": ""
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff",
+									"name": "x-content-type-options",
+									"description": ""
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN",
+									"name": "x-frame-options",
+									"description": ""
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block",
+									"name": "x-xss-protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": {\n        \"text\": \"This message will be received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087356.015,\n        \"authorId\": \"00ufq983xhQAh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed53c3a185c0022c2cfe7\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"7ce37a336a715fa762d91d09\",\n        \"appMakerLastRead\": 1536087356.015,\n        \"appUserLastRead\": 1536086721.494\n    }\n}"
+						},
+						{
 							"name": "Not Using Passthrough Api",
 							"originalRequest": {
 								"method": "POST",
@@ -11662,155 +11811,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": {\n        \"text\": \"This message was not received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087174.506,\n        \"authorId\": \"00ufq983xh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed48631f7220c08b62\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"c0021c2a74305c84313bc2ab\",\n        \"appMakerLastRead\": 1536087174.506,\n        \"appUserLastRead\": 1536086905.124\n    }\n}"
-						},
-						{
-							"name": "Using Passthrough Api ",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"This message will be received by whatsapp \",\n\t\"override\": {\n\t\t\"whatsapp\": {\n\t\t\t\"payload\": {\n\t\t\t\t\"type\": \"hsm\",\n\t\t\t\t\"hsm\": {\n\t\t\t\t\t\"namespace\": \"whatsapp:hsm:communications:smoochio\",\n\t\t\t\t\t\"element_name\": \"hello_world\",\n\t\t\t\t\t\"language\": {\n\t\t\t\t\t\t\"policy\": \"fallback\",\n\t\t\t\t\t\t\"code\": \"en_US\"\n\t\t\t\t\t},\n\t\t\t\t\t\"localizable_params\": [{\n\t\t\t\t\t\t\"default\": \"My User Name\"\n\t\t\t\t\t},{\n\t\t\t\t\t\t\"default\": \"My Agent Name\"\n\t\t\t\t\t}]\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t}\n}"
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										"{{appId}}",
-										"appusers",
-										"{{appUserId}}",
-										"messages"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true",
-									"name": "access-control-allow-credentials",
-									"description": ""
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-									"name": "access-control-allow-origin",
-									"description": ""
-								},
-								{
-									"key": "access-control-expose-headers",
-									"value": "Retry-After",
-									"name": "access-control-expose-headers",
-									"description": ""
-								},
-								{
-									"key": "cache-control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "cache-control",
-									"description": ""
-								},
-								{
-									"key": "content-length",
-									"value": "444",
-									"name": "content-length",
-									"description": ""
-								},
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8",
-									"name": "content-type",
-									"description": ""
-								},
-								{
-									"key": "date",
-									"value": "Tue, 04 Sep 2018 18:55:56 GMT",
-									"name": "date",
-									"description": ""
-								},
-								{
-									"key": "etag",
-									"value": "W/\"1bc-QacMyuxojYu8FH/l89wZuLDCt2g\"",
-									"name": "etag",
-									"description": ""
-								},
-								{
-									"key": "expires",
-									"value": "-1",
-									"name": "expires",
-									"description": ""
-								},
-								{
-									"key": "poll-interval",
-									"value": "30",
-									"name": "poll-interval",
-									"description": ""
-								},
-								{
-									"key": "pragma",
-									"value": "no-cache",
-									"name": "pragma",
-									"description": ""
-								},
-								{
-									"key": "server",
-									"value": "nginx/1.13.8",
-									"name": "server",
-									"description": ""
-								},
-								{
-									"key": "status",
-									"value": "201",
-									"name": "status",
-									"description": ""
-								},
-								{
-									"key": "strict-transport-security",
-									"value": "max-age=31536000",
-									"name": "strict-transport-security",
-									"description": ""
-								},
-								{
-									"key": "vary",
-									"value": "X-HTTP-Method-Override, Origin",
-									"name": "vary",
-									"description": ""
-								},
-								{
-									"key": "x-content-type-options",
-									"value": "nosniff",
-									"name": "x-content-type-options",
-									"description": ""
-								},
-								{
-									"key": "x-frame-options",
-									"value": "SAMEORIGIN",
-									"name": "x-frame-options",
-									"description": ""
-								},
-								{
-									"key": "x-xss-protection",
-									"value": "1; mode=block",
-									"name": "x-xss-protection",
-									"description": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": {\n        \"text\": \"This message will be received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087356.015,\n        \"authorId\": \"00ufq983xhQAh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed53c3a185c0022c2cfe7\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"7ce37a336a715fa762d91d09\",\n        \"appMakerLastRead\": 1536087356.015,\n        \"appUserLastRead\": 1536086721.494\n    }\n}"
 						}
 					]
 				},
@@ -11849,155 +11849,6 @@
 						"description": "### For more information\n- Creating a line template message:"
 					},
 					"response": [
-						{
-							"name": "LINE - Success Payload",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"This message was not received by LINE\",\n    \"override\": {\n        \"line\": {\n            \"payload\": {\n                \"messages\": [\n                    {\n                        \"type\": \"sticker\",\n                        \"packageId\": \"3\",\n                        \"stickerId\": \"229\"\n                    }\n                ]\n            }\n        }\n    }\n}"
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										"{{appId}}",
-										"appusers",
-										"{{appUserId}}",
-										"messages"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true",
-									"name": "access-control-allow-credentials",
-									"description": ""
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-									"name": "access-control-allow-origin",
-									"description": ""
-								},
-								{
-									"key": "access-control-expose-headers",
-									"value": "Retry-After",
-									"name": "access-control-expose-headers",
-									"description": ""
-								},
-								{
-									"key": "cache-control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "cache-control",
-									"description": ""
-								},
-								{
-									"key": "content-length",
-									"value": "434",
-									"name": "content-length",
-									"description": ""
-								},
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8",
-									"name": "content-type",
-									"description": ""
-								},
-								{
-									"key": "date",
-									"value": "Tue, 04 Sep 2018 19:42:34 GMT",
-									"name": "date",
-									"description": ""
-								},
-								{
-									"key": "etag",
-									"value": "W/\"1b2-m46qoe0pD2w3RnSCOTFyIqZDBMo\"",
-									"name": "etag",
-									"description": ""
-								},
-								{
-									"key": "expires",
-									"value": "-1",
-									"name": "expires",
-									"description": ""
-								},
-								{
-									"key": "poll-interval",
-									"value": "30",
-									"name": "poll-interval",
-									"description": ""
-								},
-								{
-									"key": "pragma",
-									"value": "no-cache",
-									"name": "pragma",
-									"description": ""
-								},
-								{
-									"key": "server",
-									"value": "nginx/1.13.8",
-									"name": "server",
-									"description": ""
-								},
-								{
-									"key": "status",
-									"value": "201",
-									"name": "status",
-									"description": ""
-								},
-								{
-									"key": "strict-transport-security",
-									"value": "max-age=31536000",
-									"name": "strict-transport-security",
-									"description": ""
-								},
-								{
-									"key": "vary",
-									"value": "X-HTTP-Method-Override, Origin",
-									"name": "vary",
-									"description": ""
-								},
-								{
-									"key": "x-content-type-options",
-									"value": "nosniff",
-									"name": "x-content-type-options",
-									"description": ""
-								},
-								{
-									"key": "x-frame-options",
-									"value": "SAMEORIGIN",
-									"name": "x-frame-options",
-									"description": ""
-								},
-								{
-									"key": "x-xss-protection",
-									"value": "1; mode=block",
-									"name": "x-xss-protection",
-									"description": ""
-								}
-							],
-							"cookie": [],
-							"body": "{\"message\":{\"text\":\"This message was not received by LINE\",\"type\":\"text\",\"role\":\"appMaker\",\"received\":1536090154.22,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b8ee02ad164a20028885ae9\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"905b5269612a66d083656f62\",\"appMakerLastRead\":1536090154.22,\"appUserLastRead\":1536090065.342}}"
-						},
 						{
 							"name": "LINE - Success Payload",
 							"originalRequest": {
@@ -12147,11 +11998,160 @@
 							],
 							"cookie": [],
 							"body": "{\"message\":{\"text\":\"This message was not received by LINE\",\"type\":\"text\",\"role\":\"appMaker\",\"received\":1536090154.22,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b8ee02ad164a20028885ae9\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"905b5269612a66d083656f62\",\"appMakerLastRead\":1536090154.22,\"appUserLastRead\":1536090065.342}}"
+						},
+						{
+							"name": "LINE - Success Payload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"This message was not received by LINE\",\n    \"override\": {\n        \"line\": {\n            \"payload\": {\n                \"messages\": [\n                    {\n                        \"type\": \"sticker\",\n                        \"packageId\": \"3\",\n                        \"stickerId\": \"229\"\n                    }\n                ]\n            }\n        }\n    }\n}"
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"{{appId}}",
+										"appusers",
+										"{{appUserId}}",
+										"messages"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": ""
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"name": "access-control-allow-origin",
+									"description": ""
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Retry-After",
+									"name": "access-control-expose-headers",
+									"description": ""
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "cache-control",
+									"description": ""
+								},
+								{
+									"key": "content-length",
+									"value": "434",
+									"name": "content-length",
+									"description": ""
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": ""
+								},
+								{
+									"key": "date",
+									"value": "Tue, 04 Sep 2018 19:42:34 GMT",
+									"name": "date",
+									"description": ""
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1b2-m46qoe0pD2w3RnSCOTFyIqZDBMo\"",
+									"name": "etag",
+									"description": ""
+								},
+								{
+									"key": "expires",
+									"value": "-1",
+									"name": "expires",
+									"description": ""
+								},
+								{
+									"key": "poll-interval",
+									"value": "30",
+									"name": "poll-interval",
+									"description": ""
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache",
+									"name": "pragma",
+									"description": ""
+								},
+								{
+									"key": "server",
+									"value": "nginx/1.13.8",
+									"name": "server",
+									"description": ""
+								},
+								{
+									"key": "status",
+									"value": "201",
+									"name": "status",
+									"description": ""
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000",
+									"name": "strict-transport-security",
+									"description": ""
+								},
+								{
+									"key": "vary",
+									"value": "X-HTTP-Method-Override, Origin",
+									"name": "vary",
+									"description": ""
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff",
+									"name": "x-content-type-options",
+									"description": ""
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN",
+									"name": "x-frame-options",
+									"description": ""
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block",
+									"name": "x-xss-protection",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"body": "{\"message\":{\"text\":\"This message was not received by LINE\",\"type\":\"text\",\"role\":\"appMaker\",\"received\":1536090154.22,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b8ee02ad164a20028885ae9\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"905b5269612a66d083656f62\",\"appMakerLastRead\":1536090154.22,\"appUserLastRead\":1536090065.342}}"
 						}
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Persistent Menus",
@@ -12707,7 +12707,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}",
+									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}/menu",
 									"host": [
 										"{{url}}"
 									],
@@ -12716,9 +12716,11 @@
 										"apps",
 										"{{appId}}",
 										"integrations",
-										"{{integrationId}}"
+										"{{integrationId}}",
+										"menu"
 									]
-								}
+								},
+								"description": "### For more information\n- Not available on all channels \n- Guide: [https://docs.smooch.io/guide/facebook-messenger/#persistent-menu](https://docs.smooch.io/guide/facebook-messenger/#persistent-menu)\n- [https://docs.smooch.io/guide/wechat/#persistent-menu](https://docs.smooch.io/guide/wechat/#persistent-menu)\n- API Docs: [https://docs.smooch.io/rest/#get-integration-menu](https://docs.smooch.io/rest/#get-integration-menu)"
 							},
 							"status": "OK",
 							"code": 200,
@@ -12728,83 +12730,83 @@
 									"key": "cache-control",
 									"value": "private, no-cache, no-store, must-revalidate",
 									"name": "cache-control",
-									"description": ""
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
 								},
 								{
 									"key": "content-length",
 									"value": "252",
 									"name": "content-length",
-									"description": ""
+									"description": "The length of the response body in octets (8-bit bytes)"
 								},
 								{
 									"key": "content-type",
 									"value": "application/json; charset=utf-8",
 									"name": "content-type",
-									"description": ""
+									"description": "The mime type of this content"
 								},
 								{
 									"key": "date",
-									"value": "Tue, 28 Aug 2018 17:21:13 GMT",
+									"value": "Tue, 28 Aug 2018 17:25:35 GMT",
 									"name": "date",
-									"description": ""
+									"description": "The date and time that the message was sent"
 								},
 								{
 									"key": "etag",
 									"value": "W/\"fc-BVsjftDt4fpq1XMeyQcNToqaVZA\"",
 									"name": "etag",
-									"description": ""
+									"description": "An identifier for a specific version of a resource, often a message digest"
 								},
 								{
 									"key": "expires",
 									"value": "-1",
 									"name": "expires",
-									"description": ""
+									"description": "Gives the date/time after which the response is considered stale"
 								},
 								{
 									"key": "pragma",
 									"value": "no-cache",
 									"name": "pragma",
-									"description": ""
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
 								},
 								{
 									"key": "server",
 									"value": "nginx/1.13.8",
 									"name": "server",
-									"description": ""
+									"description": "A name for the server"
 								},
 								{
 									"key": "status",
 									"value": "200",
 									"name": "status",
-									"description": ""
+									"description": "Custom header"
 								},
 								{
 									"key": "strict-transport-security",
 									"value": "max-age=31536000",
 									"name": "strict-transport-security",
-									"description": ""
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
 								},
 								{
 									"key": "x-content-type-options",
 									"value": "nosniff",
 									"name": "x-content-type-options",
-									"description": ""
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
 								},
 								{
 									"key": "x-frame-options",
 									"value": "SAMEORIGIN",
 									"name": "x-frame-options",
-									"description": ""
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
 								},
 								{
 									"key": "x-xss-protection",
 									"value": "1; mode=block",
 									"name": "x-xss-protection",
-									"description": ""
+									"description": "Cross-site scripting (XSS) filter"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"integration\": {\n        \"backgroundImageUrl\": null,\n        \"originWhitelist\": null,\n        \"integrationOrder\": null,\n        \"displayStyle\": \"button\",\n        \"actionColor\": \"0099ff\",\n        \"conversationColor\": \"0099ff\",\n        \"brandColor\": \"65758e\",\n        \"_id\": \"5b84833450460022c53073\",\n        \"type\": \"web\",\n        \"status\": \"active\"\n    }\n}"
+							"body": "{\n    \"menu\": {\n        \"items\": [\n            {\n                \"type\": \"link\",\n                \"text\": \"Smooch\",\n                \"uri\": \"http://smooch.io\",\n                \"_id\": \"57b331fbf1c6aebf940dc7\"\n            },\n            {\n                \"type\": \"postback\",\n                \"text\": \"Hello\",\n                \"payload\": \"HELLO\",\n                \"_id\": \"57b331fbf1c6aeba1f940dc6\"\n            }\n        ]\n    }\n}"
 						},
 						{
 							"name": "Get Integration Menu #2",
@@ -12937,7 +12939,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}/menu",
+									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}",
 									"host": [
 										"{{url}}"
 									],
@@ -12946,11 +12948,9 @@
 										"apps",
 										"{{appId}}",
 										"integrations",
-										"{{integrationId}}",
-										"menu"
+										"{{integrationId}}"
 									]
-								},
-								"description": "### For more information\n- Not available on all channels \n- Guide: [https://docs.smooch.io/guide/facebook-messenger/#persistent-menu](https://docs.smooch.io/guide/facebook-messenger/#persistent-menu)\n- [https://docs.smooch.io/guide/wechat/#persistent-menu](https://docs.smooch.io/guide/wechat/#persistent-menu)\n- API Docs: [https://docs.smooch.io/rest/#get-integration-menu](https://docs.smooch.io/rest/#get-integration-menu)"
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -12960,83 +12960,83 @@
 									"key": "cache-control",
 									"value": "private, no-cache, no-store, must-revalidate",
 									"name": "cache-control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+									"description": ""
 								},
 								{
 									"key": "content-length",
 									"value": "252",
 									"name": "content-length",
-									"description": "The length of the response body in octets (8-bit bytes)"
+									"description": ""
 								},
 								{
 									"key": "content-type",
 									"value": "application/json; charset=utf-8",
 									"name": "content-type",
-									"description": "The mime type of this content"
+									"description": ""
 								},
 								{
 									"key": "date",
-									"value": "Tue, 28 Aug 2018 17:25:35 GMT",
+									"value": "Tue, 28 Aug 2018 17:21:13 GMT",
 									"name": "date",
-									"description": "The date and time that the message was sent"
+									"description": ""
 								},
 								{
 									"key": "etag",
 									"value": "W/\"fc-BVsjftDt4fpq1XMeyQcNToqaVZA\"",
 									"name": "etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
+									"description": ""
 								},
 								{
 									"key": "expires",
 									"value": "-1",
 									"name": "expires",
-									"description": "Gives the date/time after which the response is considered stale"
+									"description": ""
 								},
 								{
 									"key": "pragma",
 									"value": "no-cache",
 									"name": "pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+									"description": ""
 								},
 								{
 									"key": "server",
 									"value": "nginx/1.13.8",
 									"name": "server",
-									"description": "A name for the server"
+									"description": ""
 								},
 								{
 									"key": "status",
 									"value": "200",
 									"name": "status",
-									"description": "Custom header"
+									"description": ""
 								},
 								{
 									"key": "strict-transport-security",
 									"value": "max-age=31536000",
 									"name": "strict-transport-security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+									"description": ""
 								},
 								{
 									"key": "x-content-type-options",
 									"value": "nosniff",
 									"name": "x-content-type-options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+									"description": ""
 								},
 								{
 									"key": "x-frame-options",
 									"value": "SAMEORIGIN",
 									"name": "x-frame-options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+									"description": ""
 								},
 								{
 									"key": "x-xss-protection",
 									"value": "1; mode=block",
 									"name": "x-xss-protection",
-									"description": "Cross-site scripting (XSS) filter"
+									"description": ""
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"menu\": {\n        \"items\": [\n            {\n                \"type\": \"link\",\n                \"text\": \"Smooch\",\n                \"uri\": \"http://smooch.io\",\n                \"_id\": \"57b331fbf1c6aebf940dc7\"\n            },\n            {\n                \"type\": \"postback\",\n                \"text\": \"Hello\",\n                \"payload\": \"HELLO\",\n                \"_id\": \"57b331fbf1c6aeba1f940dc6\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"integration\": {\n        \"backgroundImageUrl\": null,\n        \"originWhitelist\": null,\n        \"integrationOrder\": null,\n        \"displayStyle\": \"button\",\n        \"actionColor\": \"0099ff\",\n        \"conversationColor\": \"0099ff\",\n        \"brandColor\": \"65758e\",\n        \"_id\": \"5b84833450460022c53073\",\n        \"type\": \"web\",\n        \"status\": \"active\"\n    }\n}"
 						}
 					]
 				},
@@ -13081,150 +13081,6 @@
 						"description": "### For more information\n- Not available on all channels \n- Guide: [https://docs.smooch.io/guide/facebook-messenger/#persistent-menu](https://docs.smooch.io/guide/facebook-messenger/#persistent-menu)\n- [https://docs.smooch.io/guide/wechat/#persistent-menu](https://docs.smooch.io/guide/wechat/#persistent-menu)\n- API Docs: [https://docs.smooch.io/rest/#update-integration-menu](https://docs.smooch.io/rest/#update-integration-menu)"
 					},
 					"response": [
-						{
-							"name": "Update Integration Menu",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{JWT}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}/menu",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"v1",
-										"apps",
-										"{{appId}}",
-										"integrations",
-										"{{integrationId}}",
-										"menu"
-									]
-								},
-								"description": "### For more information\n- Not available on all channels \n- Guide: [https://docs.smooch.io/guide/facebook-messenger/#persistent-menu](https://docs.smooch.io/guide/facebook-messenger/#persistent-menu)\n- [https://docs.smooch.io/guide/wechat/#persistent-menu](https://docs.smooch.io/guide/wechat/#persistent-menu)\n- API Docs: [https://docs.smooch.io/rest/#update-integration-menu](https://docs.smooch.io/rest/#update-integration-menu)"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "access-control-allow-credentials",
-									"value": "true",
-									"name": "access-control-allow-credentials",
-									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
-								},
-								{
-									"key": "access-control-allow-origin",
-									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-									"name": "access-control-allow-origin",
-									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-								},
-								{
-									"key": "access-control-expose-headers",
-									"value": "Retry-After",
-									"name": "access-control-expose-headers",
-									"description": "Lets a server whitelist headers that browsers are allowed to access."
-								},
-								{
-									"key": "cache-control",
-									"value": "private, no-cache, no-store, must-revalidate",
-									"name": "cache-control",
-									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-								},
-								{
-									"key": "content-length",
-									"value": "252",
-									"name": "content-length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "content-type",
-									"value": "application/json; charset=utf-8",
-									"name": "content-type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "date",
-									"value": "Tue, 28 Aug 2018 17:26:34 GMT",
-									"name": "date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "etag",
-									"value": "W/\"fc-LvHOyiaj5/VWWtdeQl6ib5dUJ/Y\"",
-									"name": "etag",
-									"description": "An identifier for a specific version of a resource, often a message digest"
-								},
-								{
-									"key": "expires",
-									"value": "-1",
-									"name": "expires",
-									"description": "Gives the date/time after which the response is considered stale"
-								},
-								{
-									"key": "pragma",
-									"value": "no-cache",
-									"name": "pragma",
-									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-								},
-								{
-									"key": "server",
-									"value": "nginx/1.13.8",
-									"name": "server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "status",
-									"value": "200",
-									"name": "status",
-									"description": "Custom header"
-								},
-								{
-									"key": "strict-transport-security",
-									"value": "max-age=31536000",
-									"name": "strict-transport-security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "vary",
-									"value": "Origin",
-									"name": "vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "x-content-type-options",
-									"value": "nosniff",
-									"name": "x-content-type-options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "x-frame-options",
-									"value": "SAMEORIGIN",
-									"name": "x-frame-options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "x-xss-protection",
-									"value": "1; mode=block",
-									"name": "x-xss-protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"menu\": {\n        \"items\": [\n            {\n                \"type\": \"link\",\n                \"text\": \"Smooch\",\n                \"uri\": \"http://smooch.io\",\n                \"_id\": \"57b331fbf1c6a1f940dc7\"\n            }\n        ]\n    }\n}"
-						},
 						{
 							"name": "Update Integration Menu #2",
 							"originalRequest": {
@@ -13368,6 +13224,150 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"menu\": {\n        \"items\": [\n            {\n                \"uri\": \"http://smooch.io\",\n                \"text\": \"Smooch\",\n                \"type\": \"link\",\n                \"_id\": \"5b8591725e002213ed4d\"\n            }\n        ],\n        \"settings\": {\n            \"inputEnabled\": true\n        }\n    }\n}"
+						},
+						{
+							"name": "Update Integration Menu",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/v1/apps/{{appId}}/integrations/{{integrationId}}/menu",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										"{{integrationId}}",
+										"menu"
+									]
+								},
+								"description": "### For more information\n- Not available on all channels \n- Guide: [https://docs.smooch.io/guide/facebook-messenger/#persistent-menu](https://docs.smooch.io/guide/facebook-messenger/#persistent-menu)\n- [https://docs.smooch.io/guide/wechat/#persistent-menu](https://docs.smooch.io/guide/wechat/#persistent-menu)\n- API Docs: [https://docs.smooch.io/rest/#update-integration-menu](https://docs.smooch.io/rest/#update-integration-menu)"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-credentials",
+									"value": "true",
+									"name": "access-control-allow-credentials",
+									"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+									"name": "access-control-allow-origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "access-control-expose-headers",
+									"value": "Retry-After",
+									"name": "access-control-expose-headers",
+									"description": "Lets a server whitelist headers that browsers are allowed to access."
+								},
+								{
+									"key": "cache-control",
+									"value": "private, no-cache, no-store, must-revalidate",
+									"name": "cache-control",
+									"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+								},
+								{
+									"key": "content-length",
+									"value": "252",
+									"name": "content-length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 28 Aug 2018 17:26:34 GMT",
+									"name": "date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"fc-LvHOyiaj5/VWWtdeQl6ib5dUJ/Y\"",
+									"name": "etag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "expires",
+									"value": "-1",
+									"name": "expires",
+									"description": "Gives the date/time after which the response is considered stale"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache",
+									"name": "pragma",
+									"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+								},
+								{
+									"key": "server",
+									"value": "nginx/1.13.8",
+									"name": "server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "status",
+									"value": "200",
+									"name": "status",
+									"description": "Custom header"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000",
+									"name": "strict-transport-security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "vary",
+									"value": "Origin",
+									"name": "vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff",
+									"name": "x-content-type-options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN",
+									"name": "x-frame-options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block",
+									"name": "x-xss-protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"menu\": {\n        \"items\": [\n            {\n                \"type\": \"link\",\n                \"text\": \"Smooch\",\n                \"uri\": \"http://smooch.io\",\n                \"_id\": \"57b331fbf1c6a1f940dc7\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -13414,7 +13414,7 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Service Accounts",
@@ -14103,7 +14103,7 @@
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Service Account Keys",
@@ -14810,7 +14810,7 @@
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Templates",
@@ -14853,155 +14853,6 @@
 								"description": "### For more information\n- Creating a whatsapp template message: [https://docs.smooch.io/guide/whatsapp/#creating-templated-messages](https://docs.smooch.io/guide/whatsapp/#creating-templated-messages)\n- Guide: [https://docs.smooch.io/guide/whatsapp/#passthrough-api](https://docs.smooch.io/guide/whatsapp/#passthrough-api)"
 							},
 							"response": [
-								{
-									"name": "Not Using Passthrough Api",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{JWT}}"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"This message was not be received by whatsapp \",\n\t\"override\": {\n\t\t\"whatsapp\": {\n\t\t\t\"payload\": {\n\t\t\t\t\"type\": \"hsm\",\n\t\t\t\t\"hsm\": {\n\t\t\t\t\t\"namespace\": \"whatsapp:hsm:communications:smoochio\",\n\t\t\t\t\t\"element_name\": \"hello_world\",\n\t\t\t\t\t\"language\": {\n\t\t\t\t\t\t\"policy\": \"fallback\",\n\t\t\t\t\t\t\"code\": \"en_US\"\n\t\t\t\t\t},\n\t\t\t\t\t\"localizable_params\": [{\n\t\t\t\t\t\t\"default\": \"My User Name\"\n\t\t\t\t\t},{\n\t\t\t\t\t\t\"default\": \"My Agent Name\"\n\t\t\t\t\t}]\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t}\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												"{{appId}}",
-												"appusers",
-												"{{appUserId}}",
-												"messages"
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "access-control-allow-credentials",
-											"value": "true",
-											"name": "access-control-allow-credentials",
-											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
-										},
-										{
-											"key": "access-control-allow-origin",
-											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-											"name": "access-control-allow-origin",
-											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-										},
-										{
-											"key": "access-control-expose-headers",
-											"value": "Retry-After",
-											"name": "access-control-expose-headers",
-											"description": "Lets a server whitelist headers that browsers are allowed to access."
-										},
-										{
-											"key": "cache-control",
-											"value": "private, no-cache, no-store, must-revalidate",
-											"name": "cache-control",
-											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-										},
-										{
-											"key": "content-length",
-											"value": "444",
-											"name": "content-length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8",
-											"name": "content-type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "date",
-											"value": "Tue, 04 Sep 2018 18:52:54 GMT",
-											"name": "date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "etag",
-											"value": "W/\"1bc-OHDaMK4LjHrcAxkuZ2tpAqiyT90\"",
-											"name": "etag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "expires",
-											"value": "-1",
-											"name": "expires",
-											"description": "Gives the date/time after which the response is considered stale"
-										},
-										{
-											"key": "poll-interval",
-											"value": "30",
-											"name": "poll-interval",
-											"description": "Custom header"
-										},
-										{
-											"key": "pragma",
-											"value": "no-cache",
-											"name": "pragma",
-											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-										},
-										{
-											"key": "server",
-											"value": "nginx/1.13.8",
-											"name": "server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "status",
-											"value": "201",
-											"name": "status",
-											"description": "Custom header"
-										},
-										{
-											"key": "strict-transport-security",
-											"value": "max-age=31536000",
-											"name": "strict-transport-security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "vary",
-											"value": "X-HTTP-Method-Override, Origin",
-											"name": "vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "x-content-type-options",
-											"value": "nosniff",
-											"name": "x-content-type-options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "x-frame-options",
-											"value": "SAMEORIGIN",
-											"name": "x-frame-options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "x-xss-protection",
-											"value": "1; mode=block",
-											"name": "x-xss-protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"message\": {\n        \"text\": \"This message was not received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087174.506,\n        \"authorId\": \"00ufq983xh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed48631f7220c08b62\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"c0021c2a74305c84313bc2ab\",\n        \"appMakerLastRead\": 1536087174.506,\n        \"appUserLastRead\": 1536086905.124\n    }\n}"
-								},
 								{
 									"name": "Using Passthrough Api ",
 									"originalRequest": {
@@ -15150,6 +15001,155 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"message\": {\n        \"text\": \"This message will be received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087356.015,\n        \"authorId\": \"00ufq983xhQAh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed53c3a185c0022c2cfe7\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"7ce37a336a715fa762d91d09\",\n        \"appMakerLastRead\": 1536087356.015,\n        \"appUserLastRead\": 1536086721.494\n    }\n}"
+								},
+								{
+									"name": "Not Using Passthrough Api",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"role\": \"appMaker\",\n\t\"type\": \"text\",\n\t\"text\": \"This message was not be received by whatsapp \",\n\t\"override\": {\n\t\t\"whatsapp\": {\n\t\t\t\"payload\": {\n\t\t\t\t\"type\": \"hsm\",\n\t\t\t\t\"hsm\": {\n\t\t\t\t\t\"namespace\": \"whatsapp:hsm:communications:smoochio\",\n\t\t\t\t\t\"element_name\": \"hello_world\",\n\t\t\t\t\t\"language\": {\n\t\t\t\t\t\t\"policy\": \"fallback\",\n\t\t\t\t\t\t\"code\": \"en_US\"\n\t\t\t\t\t},\n\t\t\t\t\t\"localizable_params\": [{\n\t\t\t\t\t\t\"default\": \"My User Name\"\n\t\t\t\t\t},{\n\t\t\t\t\t\t\"default\": \"My Agent Name\"\n\t\t\t\t\t}]\n\t\t\t\t}\n\t\t\t}\n \n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												"{{appId}}",
+												"appusers",
+												"{{appUserId}}",
+												"messages"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true",
+											"name": "access-control-allow-credentials",
+											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+											"name": "access-control-allow-origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "Retry-After",
+											"name": "access-control-expose-headers",
+											"description": "Lets a server whitelist headers that browsers are allowed to access."
+										},
+										{
+											"key": "cache-control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "cache-control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "content-length",
+											"value": "444",
+											"name": "content-length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8",
+											"name": "content-type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "date",
+											"value": "Tue, 04 Sep 2018 18:52:54 GMT",
+											"name": "date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"1bc-OHDaMK4LjHrcAxkuZ2tpAqiyT90\"",
+											"name": "etag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "expires",
+											"value": "-1",
+											"name": "expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "poll-interval",
+											"value": "30",
+											"name": "poll-interval",
+											"description": "Custom header"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"name": "pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "server",
+											"value": "nginx/1.13.8",
+											"name": "server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "status",
+											"value": "201",
+											"name": "status",
+											"description": "Custom header"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=31536000",
+											"name": "strict-transport-security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "vary",
+											"value": "X-HTTP-Method-Override, Origin",
+											"name": "vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"name": "x-content-type-options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"name": "x-frame-options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"name": "x-xss-protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": {\n        \"text\": \"This message was not received by whatsapp\",\n        \"type\": \"text\",\n        \"role\": \"appMaker\",\n        \"received\": 1536087174.506,\n        \"authorId\": \"00ufq983xh5g8H0h7\",\n        \"avatarUrl\": \"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\n        \"_id\": \"5b8ed48631f7220c08b62\",\n        \"source\": {\n            \"type\": \"api\"\n        }\n    },\n    \"conversation\": {\n        \"unreadCount\": 1,\n        \"_id\": \"c0021c2a74305c84313bc2ab\",\n        \"appMakerLastRead\": 1536087174.506,\n        \"appUserLastRead\": 1536086905.124\n    }\n}"
 								}
 							]
 						},
@@ -15339,156 +15339,6 @@
 									"body": "{\"message\":{\"text\":\"1. Scandinave Getaway\\nEnjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare.\\n\\n\\n2. Brewery Tour\\nExplore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\\n\\n\\n3. Whale Watching\\nExperience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\\n\\n\\n4. French Dining\\nGary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\\n\\n\\n5. Seafood Cuisine\\nOstra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\\n\",\"items\":[{\"mediaUrl\":\"https://media.smooch.io/templates/template-scandinave.jpg\",\"mediaType\":\"image/jpeg\",\"description\":\"Enjoy massage treatments situated in a serene natural forest with an on-site bistro serving healthy local fare.\",\"title\":\"Scandinave Getaway\",\"_id\":\"5b904987effe0700226ba45d\",\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b904987effe0700226ba45f\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Check availability\",\"_id\":\"5b904987effe0700226ba45e\",\"uri\":\"\",\"type\":\"postback\"}]},{\"mediaUrl\":\"https://media.smooch.io/templates/template-brewery-tour.jpg\",\"mediaType\":\"image/jpeg\",\"description\":\"Explore Boston's thriving brewpub scene and taste roughly 18 types of beer on these guided morning and evening brewery tours.\",\"title\":\"Brewery Tour\",\"_id\":\"5b904987effe0700226ba45a\",\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b904987effe0700226ba45c\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Check availability\",\"_id\":\"5b904987effe0700226ba45b\",\"uri\":\"\",\"type\":\"postback\"}]},{\"mediaUrl\":\"https://media.smooch.io/templates/template-whale-watching.jpg\",\"mediaType\":\"image/jpeg\",\"description\":\"Experience the marine wildlife on this guided, 3-hour whale-watching cruise around the National Marine Sanctuary.\",\"title\":\"Whale Watching\",\"_id\":\"5b904987effe0700226ba457\",\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b904987effe0700226ba459\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Check availability\",\"_id\":\"5b904987effe0700226ba458\",\"uri\":\"\",\"type\":\"postback\"}]},{\"mediaUrl\":\"https://media.smooch.io/templates/template-french-dining.jpg\",\"mediaType\":\"image/jpeg\",\"description\":\"Gary Danko provides an award-winning combination of classic French cooking and personable yet impeccable service.\",\"title\":\"French Dining\",\"_id\":\"5b904987effe0700226ba454\",\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b904987effe0700226ba456\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Check availability\",\"_id\":\"5b904987effe0700226ba455\",\"uri\":\"\",\"type\":\"postback\"}]},{\"mediaUrl\":\"https://media.smooch.io/templates/template-seafood-cuisine.jpg\",\"mediaType\":\"image/jpeg\",\"description\":\"Ostra focuses on specialty seafood and the cuisine highlights the natural and fresh flavors of each dish.\",\"title\":\"Seafood Cuisine\",\"_id\":\"5b904987effe0700226ba451\",\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b904987effe0700226ba453\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Check availability\",\"_id\":\"5b904987effe0700226ba452\",\"uri\":\"\",\"type\":\"postback\"}]}],\"type\":\"carousel\",\"role\":\"appMaker\",\"received\":1536182663.726,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b904987effe0700226ba450\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"c0021c2a74305c84313bc2ab\",\"appMakerLastRead\":1536182663.726,\"appUserLastRead\":1536182642.419}}"
 								},
 								{
-									"name": "Send Template - Compound",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{JWT}}"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"%{{template: carousel_template}}%\"\n}"
-										},
-										"url": {
-											"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
-											"host": [
-												"{{url}}"
-											],
-											"path": [
-												"v1",
-												"apps",
-												"{{appId}}",
-												"appusers",
-												"{{appUserId}}",
-												"messages"
-											]
-										},
-										"description": "1. To send a template, first create a template. You can create a template with the examples provided.\n2. Replace the template name in the body. \n\n- API Docs: [https://docs.smooch.io/guide/template-messages/#sending-a-template-message](https://docs.smooch.io/guide/template-messages/#sending-a-template-message)\n\n- See the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "access-control-allow-credentials",
-											"value": "true",
-											"name": "access-control-allow-credentials",
-											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
-										},
-										{
-											"key": "access-control-allow-origin",
-											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
-											"name": "access-control-allow-origin",
-											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-										},
-										{
-											"key": "access-control-expose-headers",
-											"value": "Retry-After",
-											"name": "access-control-expose-headers",
-											"description": "Lets a server whitelist headers that browsers are allowed to access."
-										},
-										{
-											"key": "cache-control",
-											"value": "private, no-cache, no-store, must-revalidate",
-											"name": "cache-control",
-											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-										},
-										{
-											"key": "content-length",
-											"value": "802",
-											"name": "content-length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "content-type",
-											"value": "application/json; charset=utf-8",
-											"name": "content-type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "date",
-											"value": "Wed, 05 Sep 2018 21:23:59 GMT",
-											"name": "date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "etag",
-											"value": "W/\"322-IVL5WWT4nvWlVT+orZJMiheEYB4\"",
-											"name": "etag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "expires",
-											"value": "-1",
-											"name": "expires",
-											"description": "Gives the date/time after which the response is considered stale"
-										},
-										{
-											"key": "poll-interval",
-											"value": "30",
-											"name": "poll-interval",
-											"description": "Custom header"
-										},
-										{
-											"key": "pragma",
-											"value": "no-cache",
-											"name": "pragma",
-											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-										},
-										{
-											"key": "server",
-											"value": "nginx/1.13.8",
-											"name": "server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "status",
-											"value": "201",
-											"name": "status",
-											"description": "Custom header"
-										},
-										{
-											"key": "strict-transport-security",
-											"value": "max-age=31536000",
-											"name": "strict-transport-security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "vary",
-											"value": "X-HTTP-Method-Override, Origin",
-											"name": "vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "x-content-type-options",
-											"value": "nosniff",
-											"name": "x-content-type-options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "x-frame-options",
-											"value": "SAMEORIGIN",
-											"name": "x-frame-options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "x-xss-protection",
-											"value": "1; mode=block",
-											"name": "x-xss-protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\"message\":{\"text\":\"I strongly recommend our Family Basket. It’s made just for people like you.\",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://media.smooch.io/templates/template-family-basket.jpg\",\"mediaSize\":35057,\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Subscribe\",\"_id\":\"5b90496f8c017000222b1fca\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b90496f8c017000222b1fc9\",\"uri\":\"\",\"type\":\"postback\"}],\"type\":\"image\",\"role\":\"appMaker\",\"received\":1536182639.363,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b90496f8c017000222b1fc8\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"c0021c2a74305c84313bc2ab\",\"appMakerLastRead\":1536182639.363,\"appUserLastRead\":1536182602.92}}"
-								},
-								{
 									"name": "Send Template - Request Location",
 									"originalRequest": {
 										"method": "POST",
@@ -15637,11 +15487,161 @@
 									],
 									"cookie": [],
 									"body": "{\"message\":{\"text\":\"Let us know where you are.\",\"actions\":[{\"text\":\"Send location\",\"_id\":\"5b9049468c017000222b1efc\",\"uri\":\"\",\"type\":\"locationRequest\"}],\"type\":\"text\",\"role\":\"appMaker\",\"received\":1536182598.841,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b9049468c017000222b1efb\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"c0021c2a74305c84313bc2ab\",\"appMakerLastRead\":1536182598.841,\"appUserLastRead\":1536182570.411}}"
+								},
+								{
+									"name": "Send Template - Compound",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": \"appMaker\",\n    \"type\": \"text\",\n    \"text\": \"%{{template: carousel_template}}%\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/v1/apps/{{appId}}/appusers/{{appUserId}}/messages",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"v1",
+												"apps",
+												"{{appId}}",
+												"appusers",
+												"{{appUserId}}",
+												"messages"
+											]
+										},
+										"description": "1. To send a template, first create a template. You can create a template with the examples provided.\n2. Replace the template name in the body. \n\n- API Docs: [https://docs.smooch.io/guide/template-messages/#sending-a-template-message](https://docs.smooch.io/guide/template-messages/#sending-a-template-message)\n\n- See the [capabilities grid](https://docs.smooch.io/guide/channel-capabilities/) for message-type support across channels."
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-credentials",
+											"value": "true",
+											"name": "access-control-allow-credentials",
+											"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+										},
+										{
+											"key": "access-control-allow-origin",
+											"value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+											"name": "access-control-allow-origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "access-control-expose-headers",
+											"value": "Retry-After",
+											"name": "access-control-expose-headers",
+											"description": "Lets a server whitelist headers that browsers are allowed to access."
+										},
+										{
+											"key": "cache-control",
+											"value": "private, no-cache, no-store, must-revalidate",
+											"name": "cache-control",
+											"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+										},
+										{
+											"key": "content-length",
+											"value": "802",
+											"name": "content-length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8",
+											"name": "content-type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "date",
+											"value": "Wed, 05 Sep 2018 21:23:59 GMT",
+											"name": "date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"322-IVL5WWT4nvWlVT+orZJMiheEYB4\"",
+											"name": "etag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "expires",
+											"value": "-1",
+											"name": "expires",
+											"description": "Gives the date/time after which the response is considered stale"
+										},
+										{
+											"key": "poll-interval",
+											"value": "30",
+											"name": "poll-interval",
+											"description": "Custom header"
+										},
+										{
+											"key": "pragma",
+											"value": "no-cache",
+											"name": "pragma",
+											"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+										},
+										{
+											"key": "server",
+											"value": "nginx/1.13.8",
+											"name": "server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "status",
+											"value": "201",
+											"name": "status",
+											"description": "Custom header"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=31536000",
+											"name": "strict-transport-security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "vary",
+											"value": "X-HTTP-Method-Override, Origin",
+											"name": "vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff",
+											"name": "x-content-type-options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN",
+											"name": "x-frame-options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block",
+											"name": "x-xss-protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\"message\":{\"text\":\"I strongly recommend our Family Basket. It’s made just for people like you.\",\"mediaType\":\"image/jpeg\",\"mediaUrl\":\"https://media.smooch.io/templates/template-family-basket.jpg\",\"mediaSize\":35057,\"actions\":[{\"payload\":\"NOOP\",\"text\":\"Subscribe\",\"_id\":\"5b90496f8c017000222b1fca\",\"uri\":\"\",\"type\":\"postback\"},{\"payload\":\"NOOP\",\"text\":\"Learn more\",\"_id\":\"5b90496f8c017000222b1fc9\",\"uri\":\"\",\"type\":\"postback\"}],\"type\":\"image\",\"role\":\"appMaker\",\"received\":1536182639.363,\"authorId\":\"00ufq983xhQAh5g8H0h7\",\"avatarUrl\":\"https://www.gravatar.com/avatar/00000000000000000000000000000000.png?s=200&d=mm\",\"_id\":\"5b90496f8c017000222b1fc8\",\"source\":{\"type\":\"api\"}},\"conversation\":{\"unreadCount\":1,\"_id\":\"c0021c2a74305c84313bc2ab\",\"appMakerLastRead\":1536182639.363,\"appUserLastRead\":1536182602.92}}"
 								}
 							]
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -16887,7 +16887,7 @@
 							]
 						}
 					],
-					"protocolProfileBehavior": {},
+					"protocolProfileBehavior": [],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -17534,7 +17534,7 @@
 					]
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "Webhooks",
@@ -18139,7 +18139,7 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		},
 		{
 			"name": "WhatsApp Deployments",
@@ -18307,7 +18307,7 @@
 					}
 				}
 			],
-			"protocolProfileBehavior": {}
+			"protocolProfileBehavior": []
 		}
 	],
 	"auth": {
@@ -18347,5 +18347,5 @@
 			}
 		}
 	],
-	"protocolProfileBehavior": {}
+	"protocolProfileBehavior": []
 }
