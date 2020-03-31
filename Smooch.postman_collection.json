@@ -10903,6 +10903,51 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Post Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"destination\": {\n        \"integrationId\": \"<integrationId>\",\n        \"destinationId\": \"<destinationId>\"\n    },\n    \"author\": {\n    \t\"role\": \"appMaker\"\n    },\n    \"message\": {\n        \"type\": \"text\",\n        \"text\": \"Check this out!\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/notifications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"apps",
+								"{{appId}}",
+								"notifications"
+							]
+						},
+						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#post-notification](https://docs.smooch.io/rest/#post-notification)\n- Guide Docs: [https://docs.smooch.io/guide/outbound-messaging](https://docs.smooch.io/guide/outbound-messaging)"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "OAuth Endpoints",
 			"item": [
 				{
