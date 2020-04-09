@@ -3539,6 +3539,71 @@
 					]
 				},
 				{
+					"name": "Get SDK IDs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/sdks",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"apps",
+								"{{appId}}",
+								"sdks"
+							]
+						},
+						"description": "### For more information\n- API Docs: [https://docs.smooch.io/rest/#get-sdk-ids](https://docs.smooch.io/rest/#get-sdk-ids)"
+					},
+					"response": [
+						{
+							"name": "Get SDK IDs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/sdks",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"sdks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"androidIntegrationId\": \"5e13514150635a186b690113\",\n    \"iosIntegrationId\": \"5d65808b07bb28d9c6aa122c\",\n    \"webIntegrationId\": \"5e567af0643cd101468a5805\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Update App",
 					"request": {
 						"method": "PUT",
@@ -5639,7 +5704,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"type\": \"messagebird\",\n    \"accessKey\": \"<messagebirdAccessKey>\",\n    \"originator\": \"<messagebirdOriginator>\"\n}"
+									"raw": "{\n\t\"type\": \"messagebird\",\n    \"accessKey\": \"<messagebirdAccessKey>\",\n    \"originator\": \"<messagebirdOriginator>\",\n    \"signingKey\": \"<messagebirdSigningKey>\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations",
@@ -5672,7 +5737,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n\t\"type\": \"messagebird\",\n    \"accessKey\": \"{{messagebirdAccessKey}}\",\n    \"originator\": \"{{messagebirdOriginator}}\"\n}"
+											"raw": "{\n\t\"type\": \"messagebird\",\n    \"accessKey\": \"{{messagebirdAccessKey}}\",\n    \"originator\": \"{{messagebirdOriginator}}\",\n    \"signingKey\": \"{{messagebirdSigningKey}}\"\n}"
 										},
 										"url": {
 											"raw": "{{url}}/v1/apps/{{appId}}/integrations",
@@ -5693,7 +5758,7 @@
 									"_postman_previewlanguage": "json",
 									"header": [],
 									"cookie": [],
-									"body": "{\n    \"integration\": {\n        \"type\": \"messagebird\",\n        \"webhookSecret\": \"72ade38394d1da51566cede33bd1e67e\",\n        \"originator\": \"12262121021\",\n        \"_id\": \"594850b82e4a8e5e04ef2a11\"\n    }\n}"
+									"body": "{\n    \"integration\": {\n        \"type\": \"messagebird\",\n        \"webhookSecret\": \"72ade38394d1da51566cede33bd1e67e\",\n        \"originator\": \"15550000000\",\n        \"_id\": \"594850b82e4a8e5e04ef2a11\"\n    }\n}"
 								}
 							]
 						},
