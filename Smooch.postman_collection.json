@@ -2087,7 +2087,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"type\": \"mailgun\",\n\t\"confirmation\": {\n\t\t\"type\": \"prompt\"\n\t},\n\t\"address\": \"their@email.com\"\n}",
+									"raw": "{\n\t\"type\": \"mailgun\",\n\t\"confirmation\": {\n\t\t\"type\": \"immediate\"\n\t},\n\t\"address\": \"their@email.com\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
