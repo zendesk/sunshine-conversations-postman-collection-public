@@ -2085,7 +2085,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"type\": \"twilio\",\n\t\"confirmation\": {\n\t\t\"type\": \"prompt\",\n\t\t\"phoneNumber\": \"+15145555555\"\n\t}\n}"
+									"raw": "{\n\t\"type\": \"mailgun\",\n\t\"confirmation\": {\n\t\t\"type\": \"prompt\"\n\t},\n\t\"address\": \"their@email.com\"\n}"
 								},
 								"url": {
 									"raw": "{{url}}/v1/apps/:appId/appusers/:userId/channels",
@@ -2112,8 +2112,8 @@
 									]
 								}
 							},
-							"status": "Not Found",
-							"code": 404,
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -2178,7 +2178,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"appUser\": {\n        \"_id\": \"deb920657bbc3adc3fec7963\",\n        \"userId\": \"steveb@channel5.com\",\n        \"givenName\": \"Steve\",\n        \"signedUpAt\": \"2015-10-08T23:52:11.677Z\",\n        \"properties\": {\n          \"favoriteFood\": \"pizza\"\n        },\n        \"conversationStarted\": false,\n        \"credentialRequired\": false,\n        \"clients\": [],\n        \"pendingClients\": [\n            {\n                \"id\": \"d383f9f4-c8d2-42dd-9f7c-f525fad6849d\",\n                \"platform\": \"twilio\",\n                \"displayName\": \"+15145555555\"\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"appUser\": {\n        \"_id\": \"deb920657bbc3adc3fec7963\",\n        \"userId\": \"c7f6e6d6c3a637261bd9656f\",\n        \"givenName\": \"Steve\",\n        \"signedUpAt\": \"2015-10-08T23:52:11.677Z\",\n        \"properties\": {\n          \"favoriteFood\": \"pizza\"\n        },\n        \"conversationStarted\": false,\n        \"credentialRequired\": false,\n        \"clients\": [],\n        \"pendingClients\": [\n            {\n                \"id\": \"d383f9f4-c8d2-42dd-9f7c-f525fad6849d\",\n                \"platform\": \"mailgun\",\n                \"displayName\": \"their@email.com\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
