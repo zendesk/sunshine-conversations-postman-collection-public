@@ -2054,7 +2054,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\": \"twilio\",\n\t\"confirmation\": {\n\t\t\"type\": \"prompt\",\n\t\t\"phoneNumber\": \"+15145555555\"\n\t}\n}"
+							"raw": "{\n\t\"type\": \"mailgun\",\n\t\"confirmation\": {\n\t\t\"type\": \"immediate\"\n\t},\n\t\"address\": \"their@email.com\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/appusers/{{appUserId}}/channels",
