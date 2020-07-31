@@ -17147,6 +17147,331 @@
 					"_postman_isSubFolder": true
 				},
 				{
+					"name": "WhatsApp Message Templates",
+					"item": [
+						{
+							"name": "List Message Templates",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/{{integrationId}}/messageTemplates",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										"{{integrationId}}",
+										"messageTemplates"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": null,
+											"description": "When specified, returns all the translations for a single message template.",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": null,
+											"description": "When specified, limits the number of message templates to return per page.",
+											"disabled": true
+										},
+										{
+											"key": "before",
+											"value": null,
+											"description": "When specified, returns the message templates on the previous page. (eg: MjUZD)",
+											"disabled": true
+										},
+										{
+											"key": "after",
+											"value": null,
+											"description": "When specified, returns the message templates on the next page. (eg: NDkZD)",
+											"disabled": true
+										}
+									]
+								},
+								"description": "Lists all WhatsApp message templates in the account"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Message Template",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"ALERT_UPDATE\",\n    \"name\": \"shipping_notification_5000\",\n    \"language\": \"en_US\",\n    \"components\": [{ \"type\": \"BODY\", \"text\": \"Powerman has shipped your order!\" }]\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/{{integrationId}}/messageTemplates",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										"{{integrationId}}",
+										"messageTemplates"
+									]
+								},
+								"description": "Creates a new WhatsApp message template."
+							},
+							"response": [
+								{
+									"name": "Create Message Template",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"category\": \"ALERT_UPDATE\",\n    \"name\": \"shipping_notification_1234\",\n    \"language\": \"en_US\",\n    \"components\": [{ \"type\": \"BODY\", \"text\": \"We've shipped your order!\" }]\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/{{integrationId}}/messageTemplates",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{apiVersion}}",
+												"apps",
+												"{{appId}}",
+												"integrations",
+												"{{integrationId}}",
+												"messageTemplates"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Jul 2020 13:30:12 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "210"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "X-HTTP-Method-Override"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "-1"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-smooch-jwt-scope",
+											"value": "account"
+										},
+										{
+											"key": "x-smooch-app-id",
+											"value": "5ddfcac968967fcffa26a024"
+										},
+										{
+											"key": "x-smooch-app-maker-id",
+											"value": "5d1f3b162079552888738176"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d2-6dUt66O6igsG8PSnA7ZZ0ZI3UEY\""
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"messageTemplate\": {\n        \"name\": \"shipping_notification_1234\",\n        \"components\": [\n            {\n                \"type\": \"BODY\",\n                \"text\": \"We've shipped your order!\"\n            }\n        ],\n        \"language\": \"en_US\",\n        \"status\": \"PENDING\",\n        \"category\": \"ALERT_UPDATE\",\n        \"id\": \"642365629708930\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Message Template",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{JWT}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/{{integrationId}}/messageTemplates/:name",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{apiVersion}}",
+										"apps",
+										"{{appId}}",
+										"integrations",
+										"{{integrationId}}",
+										"messageTemplates",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "shipping_notification_2"
+										}
+									]
+								},
+								"description": "Deletes a message template."
+							},
+							"response": [
+								{
+									"name": "Delete Message Template",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/integrations/{{integrationId}}/messageTemplates/{{name}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{apiVersion}}",
+												"apps",
+												"{{appId}}",
+												"integrations",
+												"{{integrationId}}",
+												"messageTemplates",
+												"{{name}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.19.0"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Jul 2020 13:30:56 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "private, no-cache, no-store, must-revalidate"
+										},
+										{
+											"key": "Expires",
+											"value": "-1"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "x-smooch-jwt-scope",
+											"value": "account"
+										},
+										{
+											"key": "x-smooch-app-id",
+											"value": "5ddfcac968967fcffa26a024"
+										},
+										{
+											"key": "x-smooch-app-maker-id",
+											"value": "5d1f3b162079552888738176"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					],
+					"description": "List, create, and delete endpoints. These endpoints call the WaBiz endpoints so make sure your WhatsApp integration has businessManagerId in its data. If it does not, you can make a PUT request to your integration, supplying businessManagerId, accountId, and phoneNumberId. To obtain phoneNumberId, follow this guide: https://docs.google.com/document/d/1dzW-YRgpWWS8m83iIWG5bHtyrB-fzqpLpyiKOi_HGBM",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "List Templates",
 					"request": {
 						"method": "GET",
