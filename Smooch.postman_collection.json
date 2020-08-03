@@ -3107,6 +3107,67 @@
 							"body": "{}"
 						}
 					]
+				},
+				{
+					"name": "Get Media Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"paths\": [\"/apps/5ec41c54fe13cc5ac404bedc\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/attachments/token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"apps",
+								"{{appId}}",
+								"attachments",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cookie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCIsImtpZCI6IjRGRDNFODUzLTRDMEMtNDcwOC1BNzk4LTQ0OEJCM0NFRjNENiJ9.eyJwYXRoIjoiL2FwcHMvNWVjNDFjNTRmZTEzY2M1YWM0MDRiZWRjIiwiZXhwIjoxNTk2NDkyMTgyLCJpYXQiOjE1OTY0ODQ5ODJ9.f6hNQdeZHyItExKM-NHb2oRKGvOsn9HkpmoZS67mi0wKWv-5O_GLlHqR5tYHJx4p3JXED4ALXKJAZMnmQ02TNaj3msbHzd1AsklUnTIbdAwD9jnN913ggJV6etiF0efGePQq53aQjOqZNjp8gP2m08UmyDWg70QBJj3tpJ_0ddNjf5-iQpe3uc2k8aOnn4nj7gcmwie5yR4PUOiAB9Ao4850-bqO7KuaPzES5gLValq-mpDX3dX1eSC15whVvwwWpzki8lYtNAXbLLsxqHzPWXzqNVljctN5h-hxNAjQVene4JNMXHGxzZKkHGdGSRQwvLtb9w2Rf0qPGNnIdx8gjIL-pYKkxCi5jF5KTD9NXmDWBmiCoh_KcmlrQW570Y_QAyQYSV9sa-2ILT8BVIUkkLzSlnhv8KXNvVfrIag54nDwEaQsdbWIwth2srdsLptp6Y1FW4IyBTrUFGNeN61ZrR7BVrioCplayC9Pk80aM8OmwR7BWNJNK2nW-weTHmGf0f1A_6rwtLxqRaZ6e2HDs0iB_klbiDKMFaRhw_nrAxwuBhZh-fY_wh3Xqy3Bei2cuwtfFSZ36LUPSh_nVYJf_hVXLm_WIXmnerDi6LoBJESnB2KbpW2S6avYWkXF44B7PJ0DcgcpqSCgIkZlV33OnY8MmXXgOVYC7PLQS94ax-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{apiVersion}}/apps/{{appId}}/attachments/cookie",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"apps",
+								"{{appId}}",
+								"attachments",
+								"cookie"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
