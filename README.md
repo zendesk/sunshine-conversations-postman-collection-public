@@ -1,4 +1,4 @@
-# Smooch Public Postman Collection
+# Sunshine Conversations Public Postman Collection
 
 This repo is a placeholder to the Smooch API Postman Collection.
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0c7cc8fc66039065d20f)
